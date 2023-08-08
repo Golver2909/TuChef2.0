@@ -12,7 +12,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   imports: [
     CommonModule,
     SharedRoutingModule
-    
+  ],
+  exports:[
+    NavbarComponent
   ]
 })
 export class SharedModule { }
