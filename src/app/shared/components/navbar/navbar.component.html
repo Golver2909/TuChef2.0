@@ -1,13 +1,16 @@
+<div class="container-fluid">
+  
+</div>
+
+
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
       <div class="col-3">
         <a class="nav-link active" href="#">(Logo)</a>
-        <!-- Button trigger modal -->
         <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <img src="../../../../assets/icons/menu-solid.png" alt="boton-opciones" width="20" height="20">
+          <img src="../../../../assets/icons/settings-adjust-outline.png" alt="boton-opciones" width="20" height="20">
         </button>
 
-        <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -30,6 +33,10 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit"><img src="../../../../assets/icons/search-outline.png" alt="icono-busqueda" width="20" height="20"></button>
       </form>
-      <a class="nav-link active" href="#"><img src="../../../../assets/icons/user-solid.png" alt="usuario" width="20" height="20"></a>
+      <div class="collapse navbar-collapse">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown
+        </a>
+      </div>
     </div>
   </nav>
