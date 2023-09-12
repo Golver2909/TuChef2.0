@@ -1,42 +1,68 @@
-<div class="container-fluid">
-  
-</div>
-
-
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <div class="col-3">
-        <a class="nav-link active" href="#">(Logo)</a>
-        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <img src="../../../../assets/icons/settings-adjust-outline.png" alt="boton-opciones" width="20" height="20">
-        </button>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Filtracion</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">(Logo)</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img src="../../../../assets/icons/settings-adjust-outline.png" alt="boton-opciones" width="20" height="20">
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Filtracion</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit"><img src="../../../../assets/icons/search-outline.png" alt="icono-busqueda" width="20" height="20"></button>
-      </form>
-      <div class="collapse navbar-collapse">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown
-        </a>
+      <div class="col-3">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit"><img src="../../../../assets/icons/search-outline.png" alt="icono-busqueda" width="20" height="20"></button>
+        </form>
       </div>
+      <div class="col-3">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <img src="../../../../assets/icons/user-solid.png" alt="usuario" width="20" height="20">
+            </a>
+            <ul class="dropdown-menu navbar-nav" >
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- <a class="nav-link dropdown-toggle" href="menu-usuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-usuario" aria-controls="menu-usuario" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="../../../../assets/icons/user-solid.png" alt="usuario" width="20" height="20">
+      </button>
+      <div class="collapse navbar-collapse" id="menu-usuario">
+        <ul class="dropdown-menu navbar-nav">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div> -->
     </div>
   </nav>
