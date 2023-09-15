@@ -1,6 +1,32 @@
-<mat-form-field class="example-form-field">
-    <mat-label>Nombre de receta</mat-label>
-    <input matInput type="text" [(ngModel)]="value">
-    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-    </button>
-  </mat-form-field>
+<div class="container">
+
+    <div>
+        <mat-form-field class="example-form-field">
+            <mat-label>Nombre Receta</mat-label>
+            <input matInput type="text">
+            <button *ngIf="" matSuffix mat-icon-button aria-label="Clear" >
+            </button>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="example-form-field">
+            <mat-label>Porciones</mat-label>
+            <input matInput type="number">
+            <button *ngIf="" matSuffix mat-icon-button aria-label="Clear" >
+            </button>
+        </mat-form-field>
+    </div>
+    <div>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Tiempo de preparacion:</mat-label>
+              <span matPrefix><mat-icon matSuffix>mode_edit</mat-icon> &nbsp;</span>
+              <input type="tel" matInput placeholder="555-555-1234">
+              <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+          </form>          
+    </div>
+</div>
+
+
+
