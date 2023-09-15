@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.component';
+import { CrearRecetaComponent } from './crear-receta/crear-receta.component';
 
 const routes: Routes = [
   {
-    path: 'navbar', component:NavbarComponent
+    path: 'crearReceta', component: CrearRecetaComponent
   }
 ];
 
