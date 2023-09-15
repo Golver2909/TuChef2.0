@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "login-tu-chef02": {
+      "hosting": {
+        "TuChef": [
+          "login-tu-chef02"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "login-tu-chef02"
+  }
+}

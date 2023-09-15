@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import {FormGroup, FormControl } from '@angular/forms'
+/*
+ se utiliza para crear un grupo de controles de formulario que 
+ pueden representar una sección o un formulario completo en una 
+ aplicación 
+*/
 
 @Component({
   selector: 'app-register',

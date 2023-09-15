@@ -1,11 +1,33 @@
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-      <a class="nav-link active" href="#">(Logo)</a>
-      <a class="nav-link active" href="#">(Opciones)</a>
+      <a class="nav-link active" href="\">(loginAPP)</a>
+      <a class="nav-link active" href="\">(Opciones)</a>
+      <a class="nav-link active" [routerLink]="['/home']" href="\">(home)</a>
+     
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">(Buscar)</button>
       </form>
+
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/login']">login</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/logout']">logout</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/register']">register</a>
+        </li>
+      </ul>
+      
       <a class="nav-link active" href="#">(Usuario)</a>
+      
     </div>
   </nav>
+

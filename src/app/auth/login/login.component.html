@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                 <h1 class="text-center">Login</h1>
+                <form>
+                   
+                    <div class="form-goup">
+
+
+                        <label for="email" >Email</label>
+                        <input type="email" class="form-control">
+
+
+                    </div>
+                    <div class="form-goup">
+
+                        <label for="password">Contraseña</label>
+                        <input type="password" class="form-control">
+
+
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success" type="button">login</button>
+                       
+                      </div>
+                      
+               
+                </form>
+                <div class="form-goup mt-3">
+                    <p> Cree una cuenta <a [routerLink]="['/register']" > Register</a> </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
