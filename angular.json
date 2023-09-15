@@ -29,14 +29,15 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/disc/jquery.min.js",
-              "node_modules/@poppersjs/core/disc/umd/popper.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
 
             ]
           },
           "configurations": {
             "production": {
+             
               "budgets": [
                 {
                   "type": "initial",
