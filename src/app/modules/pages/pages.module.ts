@@ -7,11 +7,11 @@ import { CrearRecetaComponent } from './crear-receta/crear-receta.component';
 
 @NgModule({
   declarations: [
-    CrearRecetaComponent
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
+    CrearRecetaComponent
   ],
   exports:[
     CrearRecetaComponent
