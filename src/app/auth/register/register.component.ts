@@ -17,4 +17,13 @@ registerForm = new  FormGroup({
   email: new FormControl (''),
   password: new FormControl (''),
 })
+   
+
+
+
+
+
+onRegister(){
+  console.log("Form=>", this.registerForm.value)
+}
 }

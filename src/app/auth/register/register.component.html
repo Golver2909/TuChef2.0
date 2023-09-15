@@ -3,28 +3,24 @@
         <div class="card">
             <div class="card-body">
                  <h1 class="text-center">Register</h1>
-                <form>
+
+                 <!-- formulario para el registro-->
+                <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
                    
+
                     <div class="form-goup">
-
-
                         <label for="email" >Email</label>
                         <input type="email" class="form-control">
-
-
                     </div>
                     <div class="form-goup">
-
                         <label for="password">Contraseña</label>
                         <input type="password" class="form-control">
-
-
                     </div>
                     <div class="d-grid gap-2  mt-2">
-                        <button class="btn btn-success" type="button">Register</button>
-                       
+                        <button type="submit" class="btn btn-success" type="button">Register</button>
                     </div>
                    
+
                 </form>
 
                 <div class="form-goup mt-3">
