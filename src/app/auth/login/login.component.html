@@ -3,25 +3,25 @@
         <div class="card">
             <div class="card-body">
                  <h1 class="text-center">Login</h1>
-                <form>
+                <form [formGroup]="LoginForm" (ngSubmit)="onLogin()">
                    
                     <div class="form-goup">
 
 
                         <label for="email" >Email</label>
-                        <input type="email" class="form-control">
+                        <input type="email" class="form-control" formControlName="email">
 
 
                     </div>
                     <div class="form-goup">
 
                         <label for="password">Contraseña</label>
-                        <input type="password" class="form-control">
+                        <input type="password" class="form-control" formControlName="password">
 
 
                     </div>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-success" type="button">login</button>
+                        <button class="btn btn-success" type="submit">login</button>
                        
                       </div>
                       

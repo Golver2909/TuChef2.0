@@ -8,22 +8,22 @@
                 <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
                    
 
-                    <div class="form-goup">
+                    <div class="form-group">
                         <label for="email" >Email</label>
-                        <input type="email" class="form-control">
+                        <input type="email" class="form-control" formControlName="email" >
                     </div>
-                    <div class="form-goup">
+                    <div class="form-group">
                         <label for="password">Contraseña</label>
-                        <input type="password" class="form-control">
+                        <input type="password" class="form-control" formControlName="password">
                     </div>
                     <div class="d-grid gap-2  mt-2">
-                        <button type="submit" class="btn btn-success" type="button">Register</button>
+                        <button type="submit" class="btn btn-success" >Register</button>
                     </div>
-                   
+                    
 
                 </form>
 
-                <div class="form-goup mt-3">
+                <div class="form-group mt-3">
 
 
                     <p> ¿Tiene una cuaneta?<a [routerLink]="['/login']" > Login</a> </p>
