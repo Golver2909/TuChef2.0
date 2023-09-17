@@ -10,4 +10,7 @@ export class LoginComponent {
     email: new FormControl(''),
     password: new FormControl('')
   })
+  onLogin(){
+    console.log('Form=>', this.loginForm.value)
+  }
 }
