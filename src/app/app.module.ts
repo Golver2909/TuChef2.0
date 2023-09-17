@@ -1,3 +1,5 @@
+
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -6,6 +8,10 @@ import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import {environment} from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat'; // CLOUD FIRESTORE
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'; // AUTENTIFICACIÓN
 
 
 
@@ -18,8 +24,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+    //modulos de firebase
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
