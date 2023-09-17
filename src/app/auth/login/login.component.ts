@@ -6,11 +6,11 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginForm= new FormGroup({
+  LoginForm= new FormGroup({
     email: new FormControl(''),
     password: new FormControl('')
   })
   onLogin(){
-    console.log('Form=>', this.loginForm.value)
+    console.log('Form=>', this.LoginForm.value)
   }
 }
