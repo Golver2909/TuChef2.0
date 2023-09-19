@@ -1,33 +1,44 @@
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="nav-link active" href="\">(loginAPP)</a>
-      <a class="nav-link active" href="\">(Opciones)</a>
-      <a class="nav-link active" [routerLink]="['/home']" href="\">(home)</a>
+
+
+
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+ <div class="container-fluid">
+   <a class="navbar-brand" [routerLink]="'/home'">Navbar</a>
+   
+   <ul class="navbar-nav mr-auto">
+     <li class="nav-item " *ngIf="!Islogged">
+       <a class="nav-link"routerLink="/login">login</a>
+     </li>
+   </ul>
+   <ul class="navbar-nav mr-auto">
+     <li class="nav-item "  >
+      <a class="nav-link"   (click)="salir()">Cerrar Sesión</a>
+     </li>
+   </ul>
+   <ul class="navbar-nav mr-auto">
+     <li class="nav-item "   *ngIf="!Islogged">
+       <a class="nav-link" routerLink="/register">register</a>
+     </li>
+   </ul>
+   
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
      
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">(Buscar)</button>
-      </form>
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarColor01">
+    <li class="nav-item">
+      <a class="nav-link"> {{ user?.email }}</a>
+    </li>
+    
+  </div>
+ </div>
+</nav>
+<!--
 
+ {{user.email}}
 
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/login']">login</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/logout']">logout</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/register']">register</a>
-        </li>
-      </ul>
-      
-      <a class="nav-link active" href="#">(Usuario)</a>
-      
-    </div>
-  </nav>
-
+<form class="d-flex">
+       <input class="form-control me-sm-2" type="search" placeholder="Search">
+       
+     </form>
+-->

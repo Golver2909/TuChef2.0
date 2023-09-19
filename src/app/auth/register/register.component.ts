@@ -21,7 +21,7 @@ export class RegisterComponent  {
 
 
 constructor(
-  public servicioAuth: AuthService,
+  private servicioAuth: AuthService,
   
 ){}
 
