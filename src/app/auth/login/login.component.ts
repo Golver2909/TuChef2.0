@@ -23,7 +23,7 @@ import { AuthService } from '../services/auth.service';
   ){}
   onLogin(){
     const {email, password}=this.LoginForm.value
-  this.servicioAuth.register(email, password)
+  this.servicioAuth.login(email, password)
   }
 
   async salir(){

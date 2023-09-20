@@ -17,21 +17,25 @@ export class NavbarComponent implements OnInit {
 
   async ngOnInit() {
     console.log('Navbar');
-    try {
-      this.user = await this.authSvc.getCurrentUser();
-
-      if (this.user && this.user.email) {
-        this.Islogged = true;
-        // Asignar el valor de email si existe
-        this.email = this.user.email; // Asigna el valor de email si existe
+    /*this.user = await this.authSvc.getCurrentUser();
+    console.log(this.user)
+    if (this.user && this.user.email) {
+      this.Islogged = true;
+      // Asignar el valor de email si existe
+      this.email = this.user.email; // Asigna el valor de email si existe
+    */
+    this.authSvc.getCurrentUser().subscribe((user) => {
+      this.user = user;
+     
+      if (this.user) {
+        this.Islogged=true
+      }else{
+        this.Islogged=false
       }
-      
-    } catch (error) {
-      console.error('Error al obtener el usuario:', error);
-      
-    }
+    })
+
   }
-  
+
   onLogout() {
     this.authSvc.Logout();
   }
@@ -40,6 +44,7 @@ export class NavbarComponent implements OnInit {
     const res = await this.authSvc.cerrarSesion();
     alert("Ha cerrado sesión con éxito.");
     console.log(res);
+
     //this.router.navigate(['/inicio']); // Si tienes la intención de navegar a otra página, descomenta esta línea y asegúrate de importar Router desde '@angular/router'.
   }
 }

@@ -36,7 +36,9 @@ export class AuthService {
   }
 
   getCurrentUser(){
-    return firstValueFrom(this.AfAuth.authState);
+    //return firstValueFrom(this.AfAuth.authState);
+
+    return this.AfAuth.authState;
   }
  
   
