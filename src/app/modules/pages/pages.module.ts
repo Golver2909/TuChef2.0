@@ -12,10 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatListModule} from '@angular/material/list';
-import {DataSource} from '@angular/cdk/collections';
-import {Observable, ReplaySubject} from 'rxjs';
 import {MatTableModule} from '@angular/material/table';
-
 
 @NgModule({
   declarations: [
@@ -47,5 +44,7 @@ import {MatTableModule} from '@angular/material/table';
     MatTableModule
   ]
 })
-export class PagesModule { }
+export class PagesModule {
+  
+}
  

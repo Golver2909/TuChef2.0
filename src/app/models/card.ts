@@ -1,6 +1,5 @@
-export interface PeriodicElement {
+export interface Card {
     name: string;
     position: number;
-    weight: number;
     symbol: string;
   }
