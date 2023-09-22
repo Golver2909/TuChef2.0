@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatListModule} from '@angular/material/list';
 
 
 @Component({
@@ -20,7 +21,11 @@ import {MatChipsModule} from '@angular/material/chips';
     NgIf,
     MatButtonModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
+    MatListModule
   ],
 })
 export class CrearRecetaComponent {}
+
+
+
