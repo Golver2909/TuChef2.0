@@ -12,6 +12,9 @@ import { CardsComponent } from './cards/cards.component';
   imports: [
     CommonModule,
     PagesRoutingModule
+  ],
+  exports:[
+    CardsComponent
   ]
 })
 export class PagesModule { }
