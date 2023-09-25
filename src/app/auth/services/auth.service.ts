@@ -17,6 +17,7 @@ export class AuthService {
   cerrarSesion(){
     // devuelve una promesa vacía
     return this.AfAuth.signOut();
+    
   }
 
    async login(email:string, password:string){
@@ -41,5 +42,4 @@ export class AuthService {
     return this.AfAuth.authState;
   }
  
-  
 }

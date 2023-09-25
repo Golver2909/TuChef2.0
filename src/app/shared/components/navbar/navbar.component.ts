@@ -11,19 +11,12 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 export class NavbarComponent implements OnInit {
   public Islogged = false;
   public user: any;
-  email: string = "";
+  
 
   constructor(private authSvc: AuthService) { }
 
   async ngOnInit() {
     console.log('Navbar');
-    /*this.user = await this.authSvc.getCurrentUser();
-    console.log(this.user)
-    if (this.user && this.user.email) {
-      this.Islogged = true;
-      // Asignar el valor de email si existe
-      this.email = this.user.email; // Asigna el valor de email si existe
-    */
     this.authSvc.getCurrentUser().subscribe((user) => {
       this.user = user;
      
@@ -40,10 +33,15 @@ export class NavbarComponent implements OnInit {
     this.authSvc.Logout();
   }
 
+
+  
   async salir() {
-    const res = await this.authSvc.cerrarSesion();
-    alert("Ha cerrado sesión con éxito.");
-    console.log(res);
+   
+    if (this.Islogged=true) {
+      await this.authSvc.cerrarSesion();
+    } 
+    
+    
 
     //this.router.navigate(['/inicio']); // Si tienes la intención de navegar a otra página, descomenta esta línea y asegúrate de importar Router desde '@angular/router'.
   }
