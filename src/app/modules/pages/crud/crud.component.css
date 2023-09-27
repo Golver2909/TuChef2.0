@@ -1,0 +1,23 @@
+.card{
+  width: 200px;
+  height: 200px;
+  margin: 40px;
+}
+
+.titulo{
+  text-align: center;
+  font-size: 17px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+  'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.descripción{
+  text-align: center;
+  font-size: 14px;
+}
+
+.menu{
+  width: 20%;
+  height: 20px;
+
+}

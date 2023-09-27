@@ -1,11 +1,15 @@
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="nav-link active" href="#">(Usuario)</a>
-      <a class="nav-link active" href="#">(Opciones)</a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">(Buscar)</button>
-      </form>
-      <button mat-button routerLink="./crud">Crear</button>
-    </div>
-  </nav>
+    <p>
+      <mat-toolbar>
+        <button mat-icon-button mat-fab-button aria-label="Example icon-button with menu icon">
+          <mat-icon>person</mat-icon>
+        </button>
+        <span class="example-spacer"></span>
+        <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar receta" aria-label="Search">
+        <button class="separar" color="warn"><mat-icon>close</mat-icon></button>
+        <button class="separar" mat-fab-button color="warn" type="submit"><mat-icon>search</mat-icon></button>
+        </form>
+        <button class="separar" mat-flat-button color="warn" routerLink="./crud">Ver lista de recetas</button>
+        <button class="separar" mat-flat-button color="warn">Subir receta</button>
+      </mat-toolbar>
+    </p>
