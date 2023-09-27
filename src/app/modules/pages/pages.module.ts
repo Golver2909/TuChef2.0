@@ -16,7 +16,7 @@ import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
-    CrearRecetaComponent
+    CrearRecetaComponent,
   ],
   imports: [
     CommonModule,
@@ -47,4 +47,5 @@ import {MatTableModule} from '@angular/material/table';
 export class PagesModule {
   
 }
- 
+
+
