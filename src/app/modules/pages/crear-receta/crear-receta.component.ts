@@ -14,7 +14,7 @@ import { Card } from 'src/app/models/card';
 
 
 export class CrearRecetaComponent {
-  displayedColumns: string[] = ['position', 'name'];
+  displayedColumns: string[] = ['position', 'name','symbol'];
   dataSource = ELEMENT_DATA;
 }
 
@@ -23,12 +23,6 @@ const ELEMENT_DATA: Card[] = [
   {position: 2, name: 'Helium'},
   {position: 3, name: 'Lithium'},
   {position: 4, name: 'Beryllium'},
-  {position: 5, name: 'Boron'},
-  {position: 6, name: 'Carbon'},
-  {position: 7, name: 'Nitrogen'},
-  {position: 8, name: 'Oxygen'},
-  {position: 9, name: 'Fluorine'},
-  {position: 10, name: 'Neon'},
 ];
 
 
