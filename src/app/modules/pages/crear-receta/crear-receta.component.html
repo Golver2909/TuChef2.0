@@ -17,12 +17,12 @@
             </button>
         </mat-form-field>
       </div>
-      <div>
+      <div class="cuadrado">
         <form class="example-form">
-          <mat-form-field class="example-full-width">
+          <mat-form-field maxlength="9" class="example-full-width">
             <mat-label>Tiempo de preparacion:</mat-label>
             <span matPrefix><mat-icon matSuffix>mode_edit</mat-icon> &nbsp;</span>
-            <input type="time" matInput placeholder="2 horas :)">
+            <input  type="time" matInput placeholder="2 horas :)">
             <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
         </form>
@@ -57,7 +57,6 @@
               <button id="btn-acs" type="button" class="btn btn-danger"><mat-icon>delete</mat-icon></button>
             </td>
           </ng-container>
-        
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>      
@@ -65,3 +64,4 @@
     </div> 
   </div>
 </div>
+z
