@@ -13,6 +13,10 @@ const routes: Routes = [
 {
   path:'',
   loadChildren:()=>import('./shared/shared.module').then(m => m.SharedModule)
+},
+{
+  path:'home',
+  loadChildren:()=>import('./modules/home/home.module').then(m => m.HomeModule)
 }
 ];
 
