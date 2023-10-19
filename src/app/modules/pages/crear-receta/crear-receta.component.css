@@ -28,9 +28,12 @@
   }
   
   .cuadrado {
-    position: absolute;
     width: 229px; 
-    height: 70px;
+    height: 120px;
     background: #e26b09;
-
+}
+.rectangulo {
+  width: 500px; 
+  height: 25%;
+  background: #e26b09;
 }

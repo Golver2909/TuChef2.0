@@ -1,15 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-5">
-      <div>
+      <div class="rectangulo">
+        <p>Nombre Receta:</p>
         <mat-form-field class="example-form-field">
-          <mat-label>Nombre Receta</mat-label>
           <input matInput type="text">
           <button *ngIf="" matSuffix mat-icon-button aria-label="Clear" >
           </button>
         </mat-form-field>
       </div>
-      <div>
+      <br>
+      <div class="cuadrado">
         <mat-form-field class="example-form-field">
             <mat-label>Porciones</mat-label>
             <input matInput type="number">
@@ -17,10 +18,11 @@
             </button>
         </mat-form-field>
       </div>
+      <br>
       <div class="cuadrado">
-        <form class="example-form">
+        <h3>Tiempo de preparacion:</h3>
+        <form class="example-form">  
           <mat-form-field maxlength="9" class="example-full-width">
-            <mat-label>Tiempo de preparacion:</mat-label>
             <span matPrefix><mat-icon matSuffix>mode_edit</mat-icon> &nbsp;</span>
             <input  type="time" matInput placeholder="2 horas :)">
             <mat-icon matSuffix>mode_edit</mat-icon>
