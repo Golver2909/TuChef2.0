@@ -1,1 +1,29 @@
-<p>register works!</p>
+<div class="row"> <!-- Inicio de una fila en Bootstrap -->
+    <div class="col-md-6 mx-auto mt-5"> <!-- Creación de una columna centrada de ancho medio (6 de 12 columnas) con margen superior -->
+        <div class="card"> <!-- Inicio de un elemento de tarjeta de Bootstrap -->
+            <div class="card-body"> <!-- Cuerpo de la tarjeta -->
+                <h1 class="text-center">Register</h1> <!-- Encabezado de nivel 1 centrado -->
+
+                <!-- Formulario para el registro -->
+                <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                    <div class="form-group"> <!-- Grupo de formulario para el campo de correo electrónico -->
+                        <label for="email">Email</label> <!-- Etiqueta del campo de correo electrónico -->
+                        <input type="email" class="form-control" formControlName="email"> <!-- Campo de entrada de tipo correo electrónico vinculado a un FormControl llamado "email" -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para el campo de contraseña -->
+                        <label for="password">Contraseña</label> <!-- Etiqueta del campo de contraseña -->
+                        <input type="password" class="form-control" formControlName="password"> <!-- Campo de entrada de tipo contraseña vinculado a un FormControl llamado "password" -->
+                    </div>
+                    <div class="d-grid gap-2 mt-2"> <!-- Botón de rejilla con espacio entre botones y margen superior -->
+                        <button type="submit" class="btn btn-success">Register</button> <!-- Botón de envío del formulario con estilo de botón de éxito -->
+                    </div>
+                </form> <!-- Fin del formulario de registro -->
+
+                <div class="form-group mt-3"> <!-- Grupo de formulario con margen superior -->
+                    <p>¿Tiene una cuenta? <a [routerLink]="['/login']">Login</a></p> <!-- Enlace de inicio de sesión con ruta Angular -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
