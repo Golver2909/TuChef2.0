@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Novedades } from 'src/app/models/novedades';
 
 @Component({
   selector: 'app-pagina-recetas',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./pagina-recetas.component.css']
 })
 export class PaginaRecetasComponent {
+  colectNovedad: Novedades[]=[]
+  novedadSelect!: Novedades
 
 }
