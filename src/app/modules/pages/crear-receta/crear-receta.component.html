@@ -1,47 +1,56 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-5">
+
+
+
       <div class="rectangulo">
         <p>Nombre Receta:</p>
         <mat-form-field class="example-form-field">
           <input matInput type="text">
-          <button *ngIf="" matSuffix mat-icon-button aria-label="Clear" >
-          </button>
         </mat-form-field>
       </div>
+
+
+
       <br>
+
+
       <div class="cuadrado">
-        <mat-form-field class="example-form-field">
+        <mat-form-field class="example-full-width">
             <mat-label>Porciones</mat-label>
             <input matInput type="number">
-            <button *ngIf="" matSuffix mat-icon-button aria-label="Clear" >
-            </button>
         </mat-form-field>
       </div>
+
+
       <br>
+
+
       <div class="cuadrado">
         <h3>Tiempo de preparacion:</h3>
         <form class="example-form">  
-          <mat-form-field maxlength="9" class="example-full-width">
-            <span matPrefix><mat-icon matSuffix>mode_edit</mat-icon> &nbsp;</span>
+          <mat-form-field class="example-full-width">
+            <span matPrefix><mat-icon matSuffix>mode_edit</mat-icon></span>
             <input  type="time" matInput placeholder="2 horas :)">
-            <mat-icon matSuffix>mode_edit</mat-icon>
           </mat-form-field>
         </form>
       </div>
+
+
     </div>
   
   
-    <div class="col-lg-5">
-      <div>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <div class="cuadrado2">
+      <div class="demo-table">
+        <table mat-table>
   
           <!--- Note that these columns can be defined in any order.
                 The actual rendered columns are set as a property on the row definition" -->
         
           <!-- Position Column -->
           <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef> . </th>
+            <th mat-header-cell *matHeaderCellDef > . </th>
             <td mat-cell *matCellDef="let element"> {{element.position}} </td>
           </ng-container>
         

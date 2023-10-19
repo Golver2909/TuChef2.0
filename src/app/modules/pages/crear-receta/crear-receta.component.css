@@ -1,18 +1,18 @@
 .example-form {
-    min-width: 150px;
-    max-width: 20px;
-    font-size: 100px;
-    border-radius: 50px;
+    min-width: 15%;
+    max-width: 20%;
+    font-size: 50%;
+    border-radius: 50%;
 
 }
   
 .example-full-width {
-    width: 150%;
-    height: 100;
+    width: 100%;
 }
 
 .example-form-field {
-    width: 200px;
+  
+    width: 50%;
 }
 
 .demo-table {
@@ -20,20 +20,27 @@
   }
   
   .demo-button-container {
-    padding-bottom: 16px;
+    padding-bottom: 16%;
   }
   
   .demo-button + .demo-button {
-    margin-left: 8px;
+    margin-left: 8%;
   }
   
   .cuadrado {
-    width: 229px; 
-    height: 120px;
+    width: 50%; 
+    height: 35%;
     background: #e26b09;
 }
 .rectangulo {
-  width: 500px; 
+  width: 110%; 
+  height: 25%;
+  background: #e26b09;
+}
+
+
+.cuadrado2 {
+  width: 50%; 
   height: 25%;
   background: #e26b09;
 }
