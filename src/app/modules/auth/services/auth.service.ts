@@ -3,49 +3,47 @@ import { AngularFireAuth } from '@angular/fire/compat/auth'; // Importa AngularF
 //import { user } from 'firebase/compat/auth'; // Importa User desde 'firebase/compat/auth'
 import { first } from 'rxjs/operators'; // Importa first de 'rxjs/operators'
 import { firstValueFrom } from 'rxjs'; // Importa firstValueFrom de 'rxjs'
-
-
+import { Usuario } from 'src/app/models/usuario';
 
 @Injectable()
 export class AuthService {
- 
-  
   constructor(public AfAuth: AngularFireAuth) {}
-  
 
-  cerrarSesion(){
+  cerrarSesion() {
     // devuelve una promesa vacía
     return this.AfAuth.signOut();
-    
   }
 
-   async login(email:string, password:string){
-    const result = await this.AfAuth.signInWithEmailAndPassword(email,password)
-    return result;
-   }
-   
-
-   async register(email:string, password:string){
-    
-    const result =  await this.AfAuth.createUserWithEmailAndPassword(email,password)
+  async login(email: string, password: string) {
+    const result = await this.AfAuth.signInWithEmailAndPassword(
+      email,
+      password
+    );
     return result;
   }
-   async Logout(){
+
+  async register(nombre: string, password: string) {
+    const result = await this.AfAuth.createUserWithEmailAndPassword(
+      nombre,
+      password    
+    );
+    return result;
+  }
+  async Logout() {
     await this.AfAuth.signOut();
-    
   }
 
-  getCurrentUser(){
+  getCurrentUser() {
     return this.AfAuth.authState;
   }
-  // función asincronica para tomar UID
-  async getUid(){
+
+  async getUid() {
     // CURRENTUSER -> JUNTO A LA PROMESA, GENERA CAPTURA
     const user = await this.AfAuth.currentUser;
 
-    if(user == null){
+    if (user == null) {
       return null;
-    }else{
+    } else {
       return user.uid;
     }
   }
