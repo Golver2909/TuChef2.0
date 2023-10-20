@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -11,8 +12,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
-    
+  ],
+  exports :[
+    NavbarComponent
   ]
 })
 export class SharedModule { }

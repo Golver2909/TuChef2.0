@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth'; // Importa AngularF
 //import { user } from 'firebase/compat/auth'; // Importa User desde 'firebase/compat/auth'
 import { first } from 'rxjs/operators'; // Importa first de 'rxjs/operators'
 import { firstValueFrom } from 'rxjs'; // Importa firstValueFrom de 'rxjs'
-// auth.service.ts
+
 
 
 @Injectable()
@@ -38,5 +38,15 @@ export class AuthService {
   getCurrentUser(){
     return this.AfAuth.authState;
   }
- 
+  // función asincronica para tomar UID
+  async getUid(){
+    // CURRENTUSER -> JUNTO A LA PROMESA, GENERA CAPTURA
+    const user = await this.AfAuth.currentUser;
+
+    if(user == null){
+      return null;
+    }else{
+      return user.uid;
+    }
+  }
 }
