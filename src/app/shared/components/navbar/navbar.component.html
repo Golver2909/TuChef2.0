@@ -1,33 +1,15 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button routerLink="/inicio" class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>home</mat-icon>
+  </button>
 
-<nav class="navbar navbar-expand-lg nav" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/home">Navbar</a>
-    
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item " *ngIf="!Islogged">
-        <a class="nav-link"routerLink="/login">login</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item "  *ngIf="Islogged" >
-       <a class="nav-link"   (click)="salir()">Cerrar Sesión</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item "   *ngIf="!Islogged">
-        <a class="nav-link" routerLink="/register">register</a>
-      </li>
-    </ul>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-     <li class="nav-item">
-       <a class="nav-link"> {{ user?.email }}</a>
-     </li>
-     
-   </div>
-  </div>
- </nav>
+  <span class="example-spacer"></span>
+
+  <!-- Menu despegable para usuarios (registro y login)-->
+  <!-- Va a contener los formularios de acceso -->
+  <button mat-button [matMenuTriggerFor]="user"><mat-icon>person</mat-icon></button>
+  <mat-menu #user="matMenu">
+    <button mat-menu-item routerLink="/login">Iniciar Sesión <mat-icon>person</mat-icon></button>
+    <button mat-menu-item routerLink="/register">Registrarse <mat-icon>person_add</mat-icon></button>
+  </mat-menu>
+</mat-toolbar>

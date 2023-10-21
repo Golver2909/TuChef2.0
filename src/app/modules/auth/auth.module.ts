@@ -1,29 +1,48 @@
 import { NgModule } from '@angular/core';
-import { CommonModule,  } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { environment } from 'src/environments/environment';
 
+// MATERIAL
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
+// FORMULARIO
+import { FormsModule } from '@angular/forms';
+
+// SERVICIOS
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent,
-    
+    RegisterComponent
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
-    ReactiveFormsModule,
-    //modulos de firebase
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-  ]
+    // MATERIAL
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    // ANGULAR
+    FormsModule
+  ],
+  exports: [
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule
+  ],
+  providers: [ AuthService ] // proveedor -> servicio
 })
 export class AuthModule { }

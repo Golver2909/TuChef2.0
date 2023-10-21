@@ -11,11 +11,7 @@ import { FirestoreService } from 'src/app/shared/services/firestore.service';
   providers: [AuthService] // Proveedor del servicio AuthService
 })
 export class RegisterComponent {
-  registerForm = new FormGroup({ // Creación de un formulario de grupo llamado registerForm
-    email: new FormControl(), // Campo de formulario para el correo electrónico
-    password: new FormControl() // Campo de formulario para la contraseña
-  });
-
+  hide = true; // input de contraseña
   constructor(
     public servicioAuth: AuthService,
     public servicioFirestore: FirestoreService,
