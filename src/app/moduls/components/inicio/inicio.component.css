@@ -11,3 +11,11 @@
     background-position: center;
     background-size: center;
 }
+.navbar{
+    width: 90%;
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
