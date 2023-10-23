@@ -79,11 +79,12 @@ button:hover{
     position: absolute;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
 }
+
 @media(min-aspect-ratio: 16/9){
     .banner video{
-        width: 100%;
+        width: auto;
         height: auto;
     }
 }
