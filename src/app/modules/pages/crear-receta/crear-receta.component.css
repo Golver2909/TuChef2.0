@@ -2,7 +2,6 @@
     max-width: 90%;
     min-width: 10%;
     font-size: 150%;
-    position: relative;
     place-self: center;
 }
   
@@ -32,6 +31,7 @@
     height: 45%;
     background: #e26b09;
     display: grid;
+    border-radius: 10%;
 }
 .rectangulo {
   width: 110%; 
@@ -44,7 +44,8 @@
   width: 50%; 
   height: 25%;
   background: #e26b09;
+  
 }
-
-.texto {
-}
+ .texto {
+  text-align: center;
+ }
