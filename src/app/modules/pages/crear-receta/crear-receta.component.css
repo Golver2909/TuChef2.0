@@ -1,9 +1,9 @@
 .example-form {
-    max-width: 80%;
+    max-width: 90%;
+    min-width: 10%;
     font-size: 150%;
-    border-radius: 50%;
     position: relative;
-    align-items: center;
+    place-self: center;
 }
   
 .example-full-width {
@@ -31,6 +31,7 @@
     width: 35%; 
     height: 45%;
     background: #e26b09;
+    display: grid;
 }
 .rectangulo {
   width: 110%; 
@@ -43,4 +44,7 @@
   width: 50%; 
   height: 25%;
   background: #e26b09;
+}
+
+.texto {
 }
