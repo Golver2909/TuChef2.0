@@ -4,6 +4,13 @@
     font-size: 150%;
     place-self: center;
 }
+
+.example-form2 {
+  max-width: 900%;
+  min-width: 95%;
+  font-size: 150%;
+  place-self: center;
+}
   
 .example-full-width {
     width: 100%;
@@ -11,7 +18,7 @@
 
 .example-form-field {
   
-    width: 50%;
+    width: 100%;
 }
 
 .demo-table {
@@ -27,25 +34,22 @@
   }
   
   .cuadrado {
-    width: 35%; 
-    height: 45%;
+    width: 10rem;
+    height: 10rem;
     background: #e26b09;
     display: grid;
     border-radius: 10%;
 }
 .rectangulo {
-  width: 110%; 
-  height: 25%;
+  width: 47.5%; 
+  height: 6rem;
   background: #e26b09;
+  display: grid;
 }
 
 
 .cuadrado2 {
-  width: 50%; 
+  width: 47.5%; 
   height: 25%;
   background: #e26b09;
-  
 }
- .texto {
-  text-align: center;
- }

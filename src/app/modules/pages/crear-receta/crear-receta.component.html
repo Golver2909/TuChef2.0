@@ -1,79 +1,54 @@
 <div class="container">
-  <div class="row">
-    <div class="col-lg-5">
-
-
-
-      <div class="rectangulo">
-        <p>Nombre Receta:</p>
+  <!-- <div class="grid" style="--bs-columns: 12;"> -->
+  <div class="g-col-12">
+    <div class="rectangulo">
+      <form class="example-form2">
+        <mat-label><p align="center">Nombre Receta:</p></mat-label>
         <mat-form-field class="example-form-field">
-          <input matInput type="text">
+          <input
+            matInput
+            type="textarea"
+            placeholder="Ingrese nombre de la receta"
+          />
         </mat-form-field>
-      </div>
-
-
-
-      <br>
-
-      <div class="cuadrado">
-        <form class="example-form">
-          <mat-label class="texto"><p align="center">Porciones</p></mat-label>
-          <mat-form-field class="example-full-width">
-              <input matInput type="number">
-          </mat-form-field>
-        </form>
-      </div>
-
-
-      <br>
-
-
-      <div class="cuadrado">
-        <form class="example-form">
-          <label class="texto"><p align="center">Tiempo de preparacion:</p></label>
-          <mat-form-field class="example-full-width">
-            <span matPrefix><mat-icon matSuffix>mode_edit</mat-icon></span>
-            <input type="time" matInput placeholder="2 horas :)">
-          </mat-form-field>
-        </form>
-      </div>
-
-
+      </form>
     </div>
-  
-  
-    <div class="cuadrado2">
-      <div class="demo-table">
-        <table mat-table>
-  
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-        
-          <!-- Position Column -->
-          <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef > . </th>
-            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-          </ng-container>
-        
-          <!-- Name Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>Nombre de ingrediente</th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-          </ng-container>
-        
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="symbol">
-            <th mat-header-cell *matHeaderCellDef>Editar - Borrar </th>
-            <td mat-cell *matCellDef="let element"> {{element.symbol}}            
-              <button id="btn-acs" type="button" class="btn btn-warning"><mat-icon>edit</mat-icon></button>
-              <button id="btn-acs" type="button" class="btn btn-danger"><mat-icon>delete</mat-icon></button>
-            </td>
-          </ng-container>
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>      
-      </div>
-    </div> 
   </div>
+  <div class="g-col-3">
+    <div class="cuadrado">
+      <form class="example-form">
+        <mat-label class="texto"><p align="center">Porciones</p></mat-label>
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" />
+        </mat-form-field>
+      </form>
+    </div>
+    <br />
+    <div class="g-col-3">
+      <div class="cuadrado">
+        <form class="example-form">
+          <label class="texto"
+            ><p align="center">Tiempo de preparacion:</p></label
+          >
+          <mat-form-field class="example-full-width">
+            <span matPrefix><mat-icon class="tiempo">schedule</mat-icon></span>
+            <input
+              class="inp-tie"
+              type="time"
+              matInput
+              placeholder="2 horas :)"
+            />
+          </mat-form-field>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="g-col-6">
+    <p class="cuadrado2">
+      p
+      <br>
+      p
+    </p>
+  </div>
+  <!-- </div> -->
 </div>
-z
