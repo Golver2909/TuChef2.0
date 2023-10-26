@@ -1,49 +1,37 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth'; // Importa AngularFireAuth desde '@angular/fire/compat/auth'
-//import { user } from 'firebase/compat/auth'; // Importa User desde 'firebase/compat/auth'
-import { first } from 'rxjs/operators'; // Importa first de 'rxjs/operators'
-import { firstValueFrom } from 'rxjs'; // Importa firstValueFrom de 'rxjs'
-import { Usuario } from 'src/app/models/usuario';
+// importamos servicio de autentificación de firebase
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
-  constructor(public AfAuth: AngularFireAuth) {}
+  // referenciar Autentificación de Firebase
+  constructor(public auth: AngularFireAuth) { }
 
-  cerrarSesion() {
+  // función para el inicio de sesión
+  iniciarSesion(email: string, contrasena: string){
+    return this.auth.signInWithEmailAndPassword(email, contrasena);
+  }
+
+  cerrarSesion(){
     // devuelve una promesa vacía
-    return this.AfAuth.signOut();
+    return this.auth.signOut();
   }
 
-  async login(email: string, password: string) {
-    const result = await this.AfAuth.signInWithEmailAndPassword(
-      email,
-      password
-    );
-    return result;
+  // función para retornar nueva información para nombre y contrasena
+  register(email: string, contrasena: string){
+    return this.auth.createUserWithEmailAndPassword(email,contrasena);
   }
 
-  async register(nombre: string, password: string) {
-    const result = await this.AfAuth.createUserWithEmailAndPassword(
-      nombre,
-      password    
-    );
-    return result;
-  }
-  async Logout() {
-    await this.AfAuth.signOut();
-  }
-
-  getCurrentUser() {
-    return this.AfAuth.authState;
-  }
-
-  async getUid() {
+  // función asincronica para tomar UID
+  async getUid(){
     // CURRENTUSER -> JUNTO A LA PROMESA, GENERA CAPTURA
-    const user = await this.AfAuth.currentUser;
+    const user = await this.auth.currentUser;
 
-    if (user == null) {
+    if(user == null){
       return null;
-    } else {
+    }else{
       return user.uid;
     }
   }

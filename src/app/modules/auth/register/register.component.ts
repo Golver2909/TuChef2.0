@@ -18,8 +18,8 @@ export class RegisterComponent {
     public router: Router
      ) {} // Constructor del componente con inyección de dependencia del servicio AuthService
 
-     
-     
+
+
     // importación del modelo
     usuarios: Usuario = {
       uid: '',
@@ -34,7 +34,7 @@ uid = '';
  // creamos nueva colección para Usuarios
  coleccionUsuarios: Usuario[] = [];
 
-   async onRegister() { 
+   async onRegister() {
     const credenciales = {
       nombre: this.usuarios.nombre,
       contrasena: this.usuarios.contrasena

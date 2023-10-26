@@ -6,7 +6,7 @@ import {AuthModule} from "./modules/auth/auth.module"
 const routes: Routes = [
   //aplicando carga perezosa en las rutas
 {
-  path:'auth', loadChildren:()=>import('./modules/auth/auth.module').then(m => m.AuthModule)
+  path:'', loadChildren:()=>import('./modules/auth/auth.module').then(m => m.AuthModule)
 },
 
 ];

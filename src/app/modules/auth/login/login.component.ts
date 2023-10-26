@@ -26,7 +26,7 @@ export class LoginComponent {
     public servicioAuth: AuthService,
     public servicioFirestore: FirestoreService,
     public router: Router
-    ) { } 
+    ) { }
 
     async iniciar(){
       const credenciales = {
@@ -34,18 +34,18 @@ export class LoginComponent {
         contrasena: this.usuarios.contrasena
       };
 
-      const res = await this.servicioAuth.login(credenciales.email, credenciales.contrasena)
-      
+      const res = await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.contrasena)
+
       .then(res => {
         alert("Ha accedido con éxito :)");
         console.log(credenciales.email);
-  
+
         this.router.navigate(['/inicio']);
       })
-    
+
       .catch(error => {
         alert("Hubo un error al iniciar sesión :( \n"+error);
-  
+
         console.log(credenciales.email);
       })
     }
@@ -55,7 +55,7 @@ export class LoginComponent {
       .then(res => {
         alert("Ha cerrado sesión con éxito.");
         console.log(res);
-  
+
         this.router.navigate(['/inicio']);
       })
     }

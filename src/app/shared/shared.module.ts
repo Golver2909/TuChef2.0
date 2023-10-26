@@ -9,15 +9,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 
-// COMPONENTES 
-import { NavbarComponent } from './components/navbar/navbar.component';
+// COMPONENTES
+
 
 
 @NgModule({
   declarations: [
     // DECLARAMOS COMPONENTES NAVBAR Y FOOTER
-    NavbarComponent,
-    
+
   ],
   imports: [
     CommonModule,
@@ -29,7 +28,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatMenuModule
   ],
   exports: [
-    NavbarComponent,
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
