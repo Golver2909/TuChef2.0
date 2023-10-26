@@ -6,7 +6,7 @@
 }
 
 .example-form2 {
-  max-width: 900%;
+  max-width: 100%;
   min-width: 95%;
   font-size: 150%;
   place-self: center;
@@ -35,7 +35,7 @@
   
   .cuadrado {
     min-width: 50%;
-    max-width: 50%;
+    max-width: 75%;
     height: 10rem;
     background: #e26b09;
     display: grid;
@@ -51,15 +51,17 @@
 
 .cuadrado2 {
   position: center;
-  width:90%; 
+  width:100%; 
   height: 100%;
   background: #e26b09;
 }
 
 .cuadrado3 {
-  position: center;
   width:100%; 
   height: 120%;
   background: #e26b09;
 }
 
+#contenedor {
+  padding: 1%;
+}
