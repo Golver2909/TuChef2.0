@@ -1,54 +1,52 @@
-<div class="container">
-  <!-- <div class="grid" style="--bs-columns: 12;"> -->
-  <div class="g-col-12">
-    <div class="rectangulo">
-      <form class="example-form2">
-        <mat-label><p align="center">Nombre Receta:</p></mat-label>
-        <mat-form-field class="example-form-field">
-          <input
-            matInput
-            type="textarea"
-            placeholder="Ingrese nombre de la receta"
-          />
-        </mat-form-field>
-      </form>
-    </div>
-  </div>
-  <div class="g-col-3">
-    <div class="cuadrado">
-      <form class="example-form">
-        <mat-label class="texto"><p align="center">Porciones</p></mat-label>
-        <mat-form-field class="example-full-width">
-          <input matInput type="number" />
-        </mat-form-field>
-      </form>
-    </div>
-    <br />
-    <div class="g-col-3">
-      <div class="cuadrado">
-        <form class="example-form">
-          <label class="texto"
-            ><p align="center">Tiempo de preparacion:</p></label
-          >
-          <mat-form-field class="example-full-width">
-            <span matPrefix><mat-icon class="tiempo">schedule</mat-icon></span>
+<div class="container text-center">
+  <div class="row row-cols-2">
+    <div class="col">
+            <div class="rectangulo">
+        <form class="example-form2">
+          <mat-label><p align="center">Nombre Receta:</p></mat-label>
+          <mat-form-field class="example-form-field">
             <input
-              class="inp-tie"
-              type="time"
               matInput
-              placeholder="2 horas :)"
+              type="textarea"
+              placeholder="Ingrese nombre de la receta"
             />
           </mat-form-field>
         </form>
       </div>
     </div>
+    <div class="col">
+      <p class="cuadrado2">
+        p
+        <br>
+        p
+      </p>
+    </div>
+    <div class="col">
+      <div class="cuadrado">
+        <form class="example-form">
+          <mat-label class="texto"><p align="center">Porciones</p></mat-label>
+          <mat-form-field class="example-full-width">
+            <input matInput type="number" />
+          </mat-form-field>
+        </form>
+      </div>
+      <br />
+        <div class="cuadrado">
+          <form class="example-form">
+            <label class="texto"
+              ><p align="center">Tiempo de preparacion:</p></label
+            >
+            <mat-form-field class="example-full-width">
+              <span matPrefix><mat-icon class="tiempo">schedule</mat-icon></span>
+              <input
+                class="inp-tie"
+                type="time"
+                matInput
+                placeholder="2 horas :)"
+              />
+            </mat-form-field>
+          </form>
+        </div>
+    </div>
   </div>
-  <div class="g-col-6">
-    <p class="cuadrado2">
-      p
-      <br>
-      p
-    </p>
-  </div>
-  <!-- </div> -->
 </div>

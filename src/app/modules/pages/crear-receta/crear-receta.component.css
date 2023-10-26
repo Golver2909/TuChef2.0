@@ -49,7 +49,8 @@
 
 
 .cuadrado2 {
-  width: 47.5%; 
+  position: center;
+  width:100%; 
   height: 25%;
   background: #e26b09;
 }
