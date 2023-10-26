@@ -52,16 +52,30 @@
 .cuadrado2 {
   position: center;
   width:100%; 
-  height: 100%;
+  height: 90%;
   background: #e26b09;
 }
 
 .cuadrado3 {
   width:100%; 
-  height: 120%;
+  height: 100%;
   background: #e26b09;
 }
 
 #contenedor {
   padding: 1%;
+}
+
+.cua-foto {
+  margin-left: 9%;
+  width: 75%;
+  height: 16rem;
+  background: #9e9e9e;
+  display: grid;
+}
+
+.foto {
+  width:100%; 
+  height: 100%;
+  place-self: center;
 }
