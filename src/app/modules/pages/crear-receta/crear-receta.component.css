@@ -34,15 +34,15 @@
   }
   
   .cuadrado {
-    min-width: 50%;
-    max-width: 75%;
+    margin-left: 9%;
+    width: 75%;
     height: 10rem;
     background: #e26b09;
     display: grid;
-    border-radius: 10%;
 }
 .rectangulo {
-  width: 100%; 
+  margin-left: 3.5%;
+  width: 96.5%; 
   height: 6rem;
   background: #e26b09;
   display: grid;
