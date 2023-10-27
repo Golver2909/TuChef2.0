@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Receta } from 'src/app/models/receta';
 
 @Component({
   selector: 'app-cards',
@@ -7,4 +8,23 @@ import { Component } from '@angular/core';
 })
 export class CardsComponent {
 
+  public info: Receta[];
+
+
+  constructor(){
+    this.info=[
+      {
+        id:"",
+        titulo:"",
+        descripcion:"",
+        imagen:"",
+        categoria:"",
+        duracion:""
+      },
+    ]
+  }
+
+  ngOnInit(): void{
+
+  }
 }
