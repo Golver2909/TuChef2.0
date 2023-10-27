@@ -63,7 +63,7 @@ button{
     text-align: center;
     border-radius: 25px;
     color: black;
-    border: 2px;
+    border: 200px;
     font-size: 20px;
     cursor: pointer;
     font-weight: 600;
@@ -77,14 +77,14 @@ button:hover{
 }
 .banner video{
     position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
+    right: auto;
+    bottom: auto;
+    z-index: auto;
 }
 
 @media(min-aspect-ratio: 16/9){
     .banner video{
-        width: auto;
+        width: 100%;
         height: auto;
     }
 }
