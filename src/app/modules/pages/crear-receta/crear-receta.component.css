@@ -80,3 +80,8 @@
   height: 50%;
   place-self: center;
 }
+
+.texa {
+  width: 100%;
+  min-height: 38rem;
+}
