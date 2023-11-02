@@ -16,7 +16,7 @@ export class CardsComponent {
       {
         id:"",
         titulo:"",
-        descripcion:"",
+        descripcion:"", 
         imagen:"",
         categoria:"",
         duracion:""
