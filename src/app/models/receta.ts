@@ -3,6 +3,7 @@ export interface Receta {
     titulo: string;
     descripcion: string;
     imagen: string;
+    alt: string;
     categoria: string;
     duracion: string;
 }
