@@ -1,7 +1,8 @@
+import { Usuario } from './../../../models/usuario';
 import { Component } from '@angular/core'; // Importación del decorador Component de Angular
 import { FormGroup, FormControl } from '@angular/forms'; // Importación de FormGroup y FormControl para trabajar con formularios
 import { AuthService } from '../services/auth.service'; // Importación del servicio AuthService
-import { Usuario } from 'src/app/models/usuario';
+
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { Router } from '@angular/router';
 @Component({
@@ -25,14 +26,30 @@ export class LoginComponent {
   constructor(
     public servicioAuth: AuthService,
     public servicioFirestore: FirestoreService,
-    public router: Router
-    ) { }
+    public router: Router,
+   
+    ) {  }
+
+    coleccionUsuarios: Usuario[] = [];
+
 
     async iniciar(){
       const credenciales = {
         email: this.usuarios.email,
         contrasena: this.usuarios.contrasena
+        
+        
       };
+      if (this.usuarios.rol === 'lucasgarciacarrera@gmail.com') {
+        this.servicioAuth.setAdminRole();
+
+        alert("el usuaurio lucas garcia carrera a entrado como administrador ")
+      }
+
+
+
+
+       
 
       const res = await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.contrasena)
 
@@ -59,5 +76,14 @@ export class LoginComponent {
         this.router.navigate(['/inicio']);
       })
     }
-
+   
+    asignarRolAdmin() {
+      this.coleccionUsuarios.forEach((coleccionUsuarios) => {
+        if (coleccionUsuarios.email === 'lucasgarciacarrera@gmail.com') {
+          this.servicioAuth.run(() => {
+            coleccionUsuarios.rol = 'administrador';
+          });
+        }
+      });
+    }
 }

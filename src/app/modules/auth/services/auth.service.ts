@@ -7,6 +7,8 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AuthService {
   // referenciar Autentificación de Firebase
+  private isLoggedIn = false;
+  private isAdmin = false;
   constructor(public auth: AngularFireAuth) { }
 
   // función para el inicio de sesión
@@ -34,5 +36,12 @@ export class AuthService {
     }else{
       return user.uid;
     }
+  }
+  setAdminRole() {
+    this.isAdmin = true;
+  }
+
+  isUserAdmin() {
+    return this.isAdmin;
   }
 }
