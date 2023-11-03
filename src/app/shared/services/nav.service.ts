@@ -8,7 +8,15 @@ import { map } from "rxjs/operators";
 })
 export class NavService {
 
+  private userCollection:AngularFirestoreCollection<Usuario>
 
+  //Importamos la base de datos y obtenemos los datos de usuarios
+  constructor(private database:AngularFirestore) {
+    this.userCollection = database.collection('usuarios')
+  }
 
-  constructor() { }
+  obtainUser(){
+    //Se consulta y retorna los datos del usuario
+    return this.userCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())))
+  }
 }
