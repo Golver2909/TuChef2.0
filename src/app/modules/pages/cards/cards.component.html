@@ -1,22 +1,17 @@
 <div class="col">
   <div class="row">
   <div class="card" style="width: 18rem;" *ngFor="let i of info">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <!-- TÍTULO -->
-        <mat-card-title>{{i.titulo}}</mat-card-title>
-      </mat-card-header>
+    <mat-card class="">
+
       <!-- IMAGEN -->
-      <img mat-card-image src="{{i.imagen}}" alt="{{i.alt}}" width="100%">
-      <mat-card-content>
-        <!-- DESCRIPCIÓN Y DATOS -->
-        <p>
-          {{i.descripcion}}
-          <br>
-          Categoria: {{i.categoria}}
-          <br>
-          Duracion: {{i.duracion}}
-        </p>
-      </mat-card-content>
+      <div class="contenedor">
+        <img class="imagen" mat-card-image src="{{i.imagen}}">
+        <div class="centrado">
+          <mat-card-header>
+            <!-- TÍTULO -->
+            <mat-card-title class="titulo"><p class="borde">{{i.titulo}}</p></mat-card-title>
+          </mat-card-header>
+        </div>
+      </div>
     </mat-card>
   </div>
