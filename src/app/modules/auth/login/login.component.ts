@@ -1,4 +1,6 @@
-import { Usuario } from './../../../models/usuario';
+
+import { Usuario } from 'src/app/models/usuario';
+
 import { Component } from '@angular/core'; // Importación del decorador Component de Angular
 import { FormGroup, FormControl } from '@angular/forms'; // Importación de FormGroup y FormControl para trabajar con formularios
 import { AuthService } from '../services/auth.service'; // Importación del servicio AuthService
@@ -19,7 +21,7 @@ export class LoginComponent {
   usuarios: Usuario = {
     uid: '',
     nombre: '',
-    rol: '',
+    rol: 'usuario',
     email: '',
     contrasena: ''
   }
@@ -40,16 +42,7 @@ export class LoginComponent {
         
         
       };
-      if (this.usuarios.rol === 'lucasgarciacarrera@gmail.com') {
-        this.servicioAuth.setAdminRole();
 
-        alert("el usuaurio lucas garcia carrera a entrado como administrador ")
-      }
-
-
-
-
-       
 
       const res = await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.contrasena)
 
@@ -77,13 +70,15 @@ export class LoginComponent {
       })
     }
    
-    asignarRolAdmin() {
-      this.coleccionUsuarios.forEach((coleccionUsuarios) => {
-        if (coleccionUsuarios.email === 'lucasgarciacarrera@gmail.com') {
-          this.servicioAuth.run(() => {
-            coleccionUsuarios.rol = 'administrador';
-          });
-        }
-      });
+    
+
+    ngOnInit(): void{
+      this.servicioAuth.obtenerUsuario().subscribe(usuario => {
+        this.coleccionUsuarios = usuario;
+      })
     }
+
+
+    
+    
 }

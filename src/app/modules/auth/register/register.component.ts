@@ -24,7 +24,7 @@ export class RegisterComponent {
     uid: '',
     nombre: '',
     email: '',
-    rol: '',
+    rol: 'usuario',
     contrasena: ''
   }
 
