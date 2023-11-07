@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { CardsComponent } from './cards/cards.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -12,11 +13,13 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   exports:[
     CardsComponent,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ]
 })
 export class PagesModule { }

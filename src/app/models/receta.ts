@@ -6,4 +6,5 @@ export interface Receta {
     alt: string;
     categoria: string;
     duracion: string;
+    porciones: string;
 }

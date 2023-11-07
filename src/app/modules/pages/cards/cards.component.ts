@@ -16,11 +16,12 @@ export class CardsComponent {
       {
         id:"",
         titulo:"Tarta de choclo",
-        descripcion:"que buena tarta loco de clocho", 
+        descripcion:"que buena tarta loco de clocho",
         imagen:"https://img-global.cpcdn.com/recipes/1aa2efb053b648d9/1200x630cq70/photo.jpg",
         alt:"enserio que buena tarta esta muy buena",
         categoria:"Tartas",
-        duracion:"12 hs"
+        duracion:"12 hs",
+        porciones:"4",
       },
     ]
   }

@@ -1,17 +1,66 @@
-<div class="col">
-  <div class="row">
-  <div class="card" style="width: 18rem;" *ngFor="let i of info">
-    <mat-card class="">
-
-      <!-- IMAGEN -->
-      <div class="contenedor">
-        <img class="imagen" mat-card-image src="{{i.imagen}}">
-        <div class="centrado">
-          <mat-card-header>
-            <!-- TÍTULO -->
-            <mat-card-title class="titulo"><p class="borde">{{i.titulo}}</p></mat-card-title>
-          </mat-card-header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cards.component.css">
+</head>
+<body>
+    <div class="card">
+        <div class="face front">
+            <img src="img1.jpeg" alt="">
+            <h3>Japan</h3>
         </div>
-      </div>
-    </mat-card>
+        <div class="face back">
+            <h3>Japan</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+            <div class="link">
+                <a href="#">Details</a>
+            </div>
+        </div>
+    </div>
+
+
+
+<!--<div class="col">
+  <div class="row">
+    <div class="card"  *ngFor="let i of info">
+        <div class="card_landing">
+          <img class="imagen" mat-card-image src="{{i.imagen}}"
+            <h6 class="borde">{{i.titulo}}</h6>
+        </div>
+        <div class="card_info">
+            <div class="head">
+                <p class="title">{{i.titulo}}</p>
+                <div class="description">
+                    <div class="item">
+                      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="timer"></mat-icon>
+                        <p>{{i.duracion}}</p>
+                    </div>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="label"></mat-icon>
+                    <div class="item">
+                        <p>{{i.categoria}}</p>
+                    </div>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="group"></mat-icon>
+                    <div class="item">
+                      <p>{{i.porciones}}</p>
+                  </div>
+                </div>
+            </div>
+            <div class="content">
+                <p class="title">Descripcion:</p>
+                <ul class="list">
+                  {{i.descripcion}}
+                </ul>
+            </div>
+
+            <div class="action">
+                <a href="#" class="btn">Ver receta</a>
+            </div>
+        </div>
+    </div>
   </div>
+</div>-->
+
