@@ -1,26 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="cards.component.css">
-</head>
-<body>
-    <div class="card">
-        <div class="face front">
-            <img src="img1.jpeg" alt="">
-            <h3>Japan</h3>
-        </div>
-        <div class="face back">
-            <h3>Japan</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
-            <div class="link">
-                <a href="#">Details</a>
+    <!--arreglar y meter cards en un col y row-->
+<div class="container">
+    <div class="row">            
+        <div class="col" *ngFor="let i of info">
+            <div class="card">
+                <div class="face front">
+                    <img class="imagen" mat-card-image src="{{i.imagen}}">
+                    <h3>{{i.titulo}}
+                        <mat-icon>timer</mat-icon>
+                    </h3>
+                </div>
+                <div class="face back">
+                    <h4>{{i.titulo}}</h4>
+                    <div class="description">
+                        <p>{{i.descripcion}}</p>
+                    </div>
+                    <div class="timer">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="timer">person</mat-icon>
+                    </div>
+                    <div class="categoria">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="label"></mat-icon>
+                        <p>{{i.categoria}}</p>
+                    </div>
+                    <div class="porciones">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="group"></mat-icon>
+                        <p>{{i.porciones}}</p>    
+                    </div>
+                    <div class="action">
+                        <a href="#" class="btn">Ver receta</a>
+                    </div>
+                </div>
             </div>
-        </div>
     </div>
+</div>    
+
+            
+
+    <link rel="stylesheet" href="cards.component.css">
 
 
 
@@ -49,12 +64,13 @@
                   </div>
                 </div>
             </div>
+
             <div class="content">
                 <p class="title">Descripcion:</p>
                 <ul class="list">
                   {{i.descripcion}}
                 </ul>
-            </div>
+            </div>  
 
             <div class="action">
                 <a href="#" class="btn">Ver receta</a>
