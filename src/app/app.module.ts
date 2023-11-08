@@ -1,20 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';//import { AngularFireStorageModule } from "@angular/fire/compat/storage";
-import { AppComponent } from './app.component';//import { environment } from 'src/environments/environment';import { AngularFireModule } from "@angular/fire/compat";import { AngularFireAuthModule } from "@angular/fire/compat/auth";
-
-import { InicioComponent } from './moduls/components/inicio/inicio.component';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { AppRoutingModule } from './app-routing.module';//
+import { AppComponent } from './app.component';//
+import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// FIREBASE
+// Nos conectamos con la BD; NOS TRAE MÓDULOS NECESARIOS
+import { AngularFireStorageModule } from "@angular/fire/compat/storage";
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
-    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //Importacion modulos de Firebase
+    BrowserAnimationsModule,
+    SharedModule,
+    // Configuración de módulos FIREBASE
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule
