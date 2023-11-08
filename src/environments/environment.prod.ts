@@ -1,4 +1,5 @@
-// PRODUCCIÓN
 export const environment = {
-    production: true
+    production:true
 }
+//Produccion. Se exporta un archivo de firebase
+

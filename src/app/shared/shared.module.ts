@@ -15,8 +15,7 @@ import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
-    // DECLARAMOS COMPONENTES NAVBAR Y FOOTER
-
+   NavbarComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +30,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    NavbarComponent
   ]
 })
 export class SharedModule { }
