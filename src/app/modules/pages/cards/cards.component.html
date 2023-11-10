@@ -5,15 +5,13 @@
             <div class="card">
                 <div class="face front">
                     <img class="imagen" mat-card-image src="{{i.imagen}}">
-                    <h3>{{i.titulo}}
-                        
-                    </h3>
+                    <h3 class="borde">{{i.titulo}}</h3>
                 </div>
                 
                 <div class="face back">
-                    <h4>{{i.titulo}}</h4>
+                    <h4 class="borde">{{i.titulo}}</h4>
                     <div>
-                        <p><mat-icon>schedule</mat-icon>   {{i.duracion}} </p>
+                        <p><mat-icon>schedule</mat-icon> {{i.duracion}} </p>
                     </div>
                     <div>
                         <p><mat-icon>label</mat-icon> {{i.categoria}}</p>
@@ -22,7 +20,7 @@
                         <p><mat-icon>group</mat-icon> {{i.porciones}}</p>
                     </div>
                     <div class="action">
-                        <a href="#" class="btn"> <FONT color="white" >Ver receta</FONT> </a>
+                        <a href="#" class="btn" routerLink="/mostrarRecetas"> <FONT color="white"  > recetas </FONT> </a>
                     </div>
                 </div>
             </div>
