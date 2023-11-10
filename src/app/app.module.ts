@@ -10,6 +10,7 @@ import { AngularFireStorageModule } from "@angular/fire/compat/storage";
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { PrincipalModule } from './modules/principal/principal.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
     AngularFireAuthModule,
     AngularFireStorageModule,
     SharedModule,
-    BrowserAnimationsModule
+    PrincipalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
