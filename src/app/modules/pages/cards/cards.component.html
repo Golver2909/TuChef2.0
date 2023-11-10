@@ -6,77 +6,25 @@
                 <div class="face front">
                     <img class="imagen" mat-card-image src="{{i.imagen}}">
                     <h3>{{i.titulo}}
-                        <mat-icon>timer</mat-icon>
+                        
                     </h3>
                 </div>
+                
                 <div class="face back">
                     <h4>{{i.titulo}}</h4>
-                    <div class="description">
-                        <p>{{i.descripcion}}</p>
+                    <div>
+                        <p><mat-icon>schedule</mat-icon>   {{i.duracion}} </p>
                     </div>
-                    <div class="timer">
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="timer">person</mat-icon>
+                    <div>
+                        <p><mat-icon>label</mat-icon> {{i.categoria}}</p>
                     </div>
-                    <div class="categoria">
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="label"></mat-icon>
-                        <p>{{i.categoria}}</p>
-                    </div>
-                    <div class="porciones">
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="group"></mat-icon>
-                        <p>{{i.porciones}}</p>    
+                    <div>
+                        <p><mat-icon>group</mat-icon> {{i.porciones}}</p>
                     </div>
                     <div class="action">
-                        <a href="#" class="btn">Ver receta</a>
+                        <a href="#" class="btn"> <FONT color="white" >Ver receta</FONT> </a>
                     </div>
                 </div>
             </div>
     </div>
 </div>    
-
-            
-
-    <link rel="stylesheet" href="cards.component.css">
-
-
-
-<!--<div class="col">
-  <div class="row">
-    <div class="card"  *ngFor="let i of info">
-        <div class="card_landing">
-          <img class="imagen" mat-card-image src="{{i.imagen}}"
-            <h6 class="borde">{{i.titulo}}</h6>
-        </div>
-        <div class="card_info">
-            <div class="head">
-                <p class="title">{{i.titulo}}</p>
-                <div class="description">
-                    <div class="item">
-                      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="timer"></mat-icon>
-                        <p>{{i.duracion}}</p>
-                    </div>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="label"></mat-icon>
-                    <div class="item">
-                        <p>{{i.categoria}}</p>
-                    </div>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="group"></mat-icon>
-                    <div class="item">
-                      <p>{{i.porciones}}</p>
-                  </div>
-                </div>
-            </div>
-
-            <div class="content">
-                <p class="title">Descripcion:</p>
-                <ul class="list">
-                  {{i.descripcion}}
-                </ul>
-            </div>  
-
-            <div class="action">
-                <a href="#" class="btn">Ver receta</a>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>-->
-
