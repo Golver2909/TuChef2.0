@@ -1,0 +1,26 @@
+<mat-toolbar>
+  <div class="col-lg-4">
+    <button mat-icon-button routerLink=""></button>
+    <button class="btn btn-outline-success">
+      <img width="20" height="20" src="../../../../assets/icons/settings-adjust-outline.png"alt="filtración">
+    </button>
+  </div>
+  <span class="example-spacer"></span>
+  <!-- Seccion busqueda -->
+    <input class="form-control" type="text">
+    <button class="btn btn-outline-success" routerLink=""><img width="20" height="20"
+      src="../../../../assets/icons/search-outline.png" alt="">
+    </button>
+  
+  <span class="example-spacer"></span>
+  <div id="derecha" class="col-lg-3"><!-- Lado derecho -->
+    <button mat-button [matMenuTriggerFor]="menu"><img width="20" height="20" src="../../../../assets/icons/user-solid.png" alt=""></button>
+    <mat-menu #menu="matMenu" yPosition="below" xPosition="after">
+      <p id="dataLogin" class="text-info">No se encuentra logueado</p>
+      <hr>
+      <button mat-menu-item routerLink="">Configurar cuenta</button>
+      <button mat-menu-item routerLink="">Ayuda</button>
+      <button mat-menu-item routerLink="">Salir</button><!-- Aqui ira un ngIf, para casos donde no este logueado -->
+    </mat-menu>
+  </div>
+</mat-toolbar>
