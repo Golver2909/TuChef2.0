@@ -1,0 +1,9 @@
+mat-toolbar{
+    background-color: orange;
+}
+#derecha{
+    justify-content: right;
+}
+.example-spacer{
+    flex: 1 1 auto;
+}
