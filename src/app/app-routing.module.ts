@@ -12,6 +12,7 @@ const routes: Routes = [
 {
   path:'', loadChildren:()=>import('./modules/principal/principal.module').then(m => m.PrincipalModule)
 }
+
 ];
 
 @NgModule({
