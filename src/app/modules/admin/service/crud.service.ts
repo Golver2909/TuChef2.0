@@ -6,6 +6,12 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CrudService {
+private productosReceta:AngularFirestoreCollection<Receta>
 
-  constructor() { }
+
+constructor(private database: AngularFirestore) {
+  this.productosReceta = database.collection('productos')
+
+  
+}
 }

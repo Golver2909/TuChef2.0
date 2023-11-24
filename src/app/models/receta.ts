@@ -1,5 +1,5 @@
 export interface Receta {
-    id: string;
+    idReceta: string;
     titulo: string;
     descripcion: string;
     imagen: string;
