@@ -5,7 +5,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { CardsComponent } from '../../shared/components/cards/cards.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MostrarRecetaComponent } from './mostrar-receta/mostrar-receta.component';
+import { MostrarRecetaComponent } from '../admin/mostrar-receta/mostrar-receta.component';
 import {MatButtonModule} from '@angular/material/button';
 import {NgIf} from '@angular/common';
 import {FormsModule} from '@angular/forms';

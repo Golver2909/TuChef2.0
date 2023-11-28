@@ -1,99 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { Receta } from 'src/app/models/receta';
-
+import { CrudService} from "src/app/modules/admin/service/crud.service";
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent {
+  coleccionRecetas:Receta []=[]
 
-  public info: Receta[];
+  receta:Receta[]=[]
+
+  RecetaSeleccionada!:Receta;
 
 
-  constructor(){
-    this.info=[
-      {
-        id:"",
-        titulo:"Tarta de choclo",
-        descripcion:"que buena tarta loco de clocho",
-        imagen:"https://img-global.cpcdn.com/recipes/1aa2efb053b648d9/1200x630cq70/photo.jpg",
-        alt:"enserio que buena tarta esta muy buena",
-        categoria:"Tartas",
-        duracion:"12 hs",
-        porciones:"4",
-      },
-      {
-        id:"",
-        titulo:"Tarta de choclo",
-        descripcion:"que buena tarta loco de clocho",
-        imagen:"https://img-global.cpcdn.com/recipes/1aa2efb053b648d9/1200x630cq70/photo.jpg",
-        alt:"enserio que buena tarta esta muy buena",
-        categoria:"Tartas",
-        duracion:"12 hs",
-        porciones:"4",
-      },
-      {
-        id:"",
-        titulo:"Tarta de choclo",
-        descripcion:"que buena tarta loco de clocho",
-        imagen:"https://img-global.cpcdn.com/recipes/1aa2efb053b648d9/1200x630cq70/photo.jpg",
-        alt:"enserio que buena tarta esta muy buena",
-        categoria:"Tartas",
-        duracion:"12 hs",
-        porciones:"4",
-      },      {
-        id:"",
-        titulo:"Tarta de choclo",
-        descripcion:"que buena tarta loco de clocho",
-        imagen:"https://img-global.cpcdn.com/recipes/1aa2efb053b648d9/1200x630cq70/photo.jpg",
-        alt:"enserio que buena tarta esta muy buena",
-        categoria:"Tartas",
-        duracion:"12 hs",
-        porciones:"4",
-      },
-      
-      {
-        id:"",
-        titulo:"Tarta de choclo",
-        descripcion:"que buena tarta loco de clocho",
-        imagen:"https://img-global.cpcdn.com/recipes/1aa2efb053b648d9/1200x630cq70/photo.jpg",
-        alt:"enserio que buena tarta esta muy buena",
-        categoria:"Tartas",
-        duracion:"12 hs",
-        porciones:"4",
-      },      {
-        id:"",
-        titulo:"Tarta de choclo",
-        descripcion:"que buena tarta loco de clocho",
-        imagen:"https://img-global.cpcdn.com/recipes/1aa2efb053b648d9/1200x630cq70/photo.jpg",
-        alt:"enserio que buena tarta esta muy buena",
-        categoria:"Tartas",
-        duracion:"12 hs",
-        porciones:"4",
-      },      {
-        id:"",
-        titulo:"Tarta de choclo",
-        descripcion:"que buena tarta loco de clocho",
-        imagen:"https://img-global.cpcdn.com/recipes/1aa2efb053b648d9/1200x630cq70/photo.jpg",
-        alt:"enserio que buena tarta esta muy buena",
-        categoria:"Tartas",
-        duracion:"12 hs",
-        porciones:"4",
-      },      {
-        id:"",
-        titulo:"Tarta de choclo",
-        descripcion:"que buena tarta loco de clocho",
-        imagen:"https://img-global.cpcdn.com/recipes/1aa2efb053b648d9/1200x630cq70/photo.jpg",
-        alt:"enserio que buena tarta esta muy buena",
-        categoria:"Tartas",
-        duracion:"12 hs",
-        porciones:"4",
-      },
-    ]
+  
+  constructor(public servicioCrud: CrudService){
+  
   }
 
   ngOnInit(): void{
+    this.servicioCrud.obtenerRecetas().subscribe(Reteta=>{
+      this.coleccionRecetas=Reteta;
 
+
+    })
   }
+
+
+  mostrarVer(info: Receta){
+    // al seleccionar "ver más" el modal visible pasa a "true"
+    
+    // muestra la información del producto que se seleccione
+    this.RecetaSeleccionada = info;
+  }
+ 
 }

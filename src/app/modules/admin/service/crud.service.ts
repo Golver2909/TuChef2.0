@@ -52,12 +52,12 @@ crearReceta(Receta:Receta){
     }
     catch(error){
       reject (error)
-      alert("se produjo un error al eliminar el producto \n"+error)
+      alert("se produjo un error al eliminar el producto  adasdasdas\n"+error)
     }
   })
 }
 
-
+  
 
 
 }

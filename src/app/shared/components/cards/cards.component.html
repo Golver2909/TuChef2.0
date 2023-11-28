@@ -1,7 +1,6 @@
-    <!--arreglar y meter cards en un col y row-->
 <div class="container">
-    <div class="row">            
-        <div class="col-lg-4" *ngFor="let i of info">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let i of coleccionRecetas">
             <div class="card">
                 <div class="face front">
                     <img class="imagen" mat-card-image src="{{i.imagen}}">
@@ -20,9 +19,12 @@
                         <p><mat-icon>group</mat-icon> {{i.porciones}}</p>
                     </div>
                     <div class="action">
-                        <a href="#" class="btn" routerLink="/mostrarRecetas"> <FONT color="white"  > recetas </FONT> </a>
+                        <a href="#" class="btn" routerLink="/mostrarRecetas">
+                            <font color="white">recetas</font>
+                        </a>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 </div>
