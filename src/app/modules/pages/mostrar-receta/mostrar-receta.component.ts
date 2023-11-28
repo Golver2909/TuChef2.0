@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Receta } from 'src/app/models/receta';
-import { CrudService } from "../service/crud.service";
+import { CrudService } from "../../admin/service/crud.service";
 @Component({
   selector: 'app-mostrar-receta',
   templateUrl: './mostrar-receta.component.html',
