@@ -11,7 +11,7 @@ private productosReceta:AngularFirestoreCollection<Receta>
 
 
 constructor(private database: AngularFirestore) {
-  this.productosReceta = database.collection('productos')
+  this.productosReceta = database.collection('Recetas')
 
 
 }
