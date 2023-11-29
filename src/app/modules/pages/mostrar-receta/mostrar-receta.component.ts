@@ -10,7 +10,7 @@ import { CrudService } from "../../admin/service/crud.service";
 export class MostrarRecetaComponent {
   coleccionRecetas:Receta []=[]
 
-  receta:Receta[]=[]
+  rweceta:Receta[]=[]
 
   RecetaSeleccionada!:Receta;
 

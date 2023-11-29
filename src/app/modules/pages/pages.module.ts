@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MostrarRecetaComponent } from './mostrar-receta/mostrar-receta.component';
 import {MatButtonModule} from '@angular/material/button';
 import {NgIf} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,  ReactiveFormsModule,} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatChipsModule} from '@angular/material/chips';
@@ -17,7 +17,8 @@ import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
-    MostrarRecetaComponent
+    MostrarRecetaComponent,
+  
   ],
   imports: [
     CommonModule,
@@ -34,7 +35,8 @@ import {MatTableModule} from '@angular/material/table';
     MatIconModule,
     MatChipsModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
   ],
   exports:[
     

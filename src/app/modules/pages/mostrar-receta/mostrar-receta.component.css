@@ -6,10 +6,10 @@
 }
 
 .example-form2 {
-  max-width: 100%;
-  min-width: 95%;
-  font-size: 150%;
-  place-self: center;
+max-width: 100%;
+min-width: 95%;
+font-size: 150%;
+place-self: center;
 }
 
 .example-full-width {
@@ -17,6 +17,7 @@
 }
 
 .example-form-field {
+
   width: 100%;
 }
 
@@ -34,53 +35,76 @@
 
 .cuadrado {
   margin-left: 9%;
-  width: 750%;
-  height: 100%;
+  width: 75%;
+  height: 10rem;
   background: #e26b09;
   display: grid;
-  border-radius: 15%;
 }
 .rectangulo {
-  margin-left: 3.5%;
-  width: 96.5%;
-  height: 6rem;
-  background: #e26b09;
-  display: grid;
+margin-left: 3.5%;
+width: 96.5%; 
+height: 6rem;
+background: #e26b09;
+display: grid;
 }
 
+
 .cuadrado2 {
-  position: center;
-  width: 100%;
-  height: 90%;
-  background: #e26b09;
+position: center;
+width:100%; 
+height: 90%;
+background: #e26b09;
 }
 
 .cuadrado3 {
-  width: 100%;
-  height: 100%;
-  background: #e26b09;
+width:100%; 
+height: 100%;
+background: #e26b09;
 }
 
 #contenedor {
-  padding: 1%;
+padding: 1%;
 }
 
 .cua-foto {
-  margin-left: 9%;
-  width: 75%;
-  height: 16rem;
-  background: #c5c5c5;
-  display: grid;
+margin-left: 9%;
+width: 75%;
+height: 16rem;
+background: #c5c5c5;
+display: grid;
 }
 
 .foto {
-  font-size: 9rem;
-  width: 100%;
-  height: 50%;
-  place-self: center;
+font-size: 9rem;
+width: 100%;
+height: 50%;
+place-self: center;
 }
 
 .texa {
-  width: 100%;
-  min-height: 38rem;
+width: 100%;
+min-height: 38rem;
+}
+button{
+  width: 20%;
+  padding: 1%;
+  margin: 2% 5%;
+  text-align: center;
+  border-radius: 25px;
+  color: black;
+  border: 1px solid #000;
+  font-size: 100%;
+  cursor: pointer;
+  font-weight: 600;
+  position: fixed;
+  bottom: 10%; /* Ajusta la distancia desde la parte inferior según sea necesario */
+  right: 10%; /* Ajusta la distancia desde la derecha según sea necesario */
+
+}
+button:hover{
+   background: rgb(255, 153, 51);
+  transition: 0.5s;
+}
+button:hover{
+  color: white;
 }

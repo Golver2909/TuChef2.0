@@ -5,10 +5,10 @@ import { MostrarRecetaComponent } from './mostrar-receta/mostrar-receta.componen
 
 const routes: Routes = [
   {
-    path:'',component:CardsComponent 
+    path:'cards',component:CardsComponent 
   },
   {
-    path:"mostrarRecetas",component:MostrarRecetaComponent
+    path:"mostrar",component:MostrarRecetaComponent
   }
 ];
 
