@@ -9,7 +9,7 @@ import { CrudService} from "src/app/modules/admin/service/crud.service";
 export class CardsComponent {
   coleccionRecetas:Receta []=[]
 
-  receta:Receta[]=[]
+
 
   RecetaSeleccionada!:Receta;
 

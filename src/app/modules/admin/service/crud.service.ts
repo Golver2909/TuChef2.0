@@ -11,7 +11,7 @@ private productosReceta:AngularFirestoreCollection<Receta>
 
 
 constructor(private database: AngularFirestore) {
-  this.productosReceta = database.collection('Recetas')
+  this.productosReceta = database.collection('Receta')
 
 
 }
@@ -39,7 +39,7 @@ crearReceta(Receta:Receta){
 
 
  modificarrReceta(id:string,   nuevaData:Receta){
-  return this.database.collection('receta').doc(id).update(nuevaData)
+  return this.database.collection('Receta').doc(id).update(nuevaData)
  }
  
 
