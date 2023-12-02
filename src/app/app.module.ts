@@ -15,6 +15,7 @@ import { PagesModule } from './modules/pages/pages.module';
 
 import {MatCardModule} from '@angular/material/card';
 import { AuthModule } from './modules/auth/auth.module';
+import { AdminModule } from './modules/admin/admin.module';
 
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -42,7 +43,8 @@ import { AuthModule } from './modules/auth/auth.module';
     BrowserAnimationsModule,
     MatCardModule,
     PagesModule,
-    AuthModule
+    AuthModule,
+    AdminModule
 
     
   ],

@@ -8,10 +8,11 @@ import { TableComponent } from './components/table/table.component';
   declarations: [
     TableComponent
   ],
-  exports:[],
+  exports:[TableComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    
     
   ]
 })

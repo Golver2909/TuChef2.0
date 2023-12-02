@@ -6,30 +6,31 @@
 </head>
 <body>
 
-<h2>Border Spacing</h2>
-<p>Border spacing especifica el espacio de las casillas .</p>
+<h2 class="center">Tabla De Recetas</h2><br>
 
-<table id="t01">
+
+<table  id="t01">
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-    <th>Age</th>
+    <th>Nombre de la Receta </th>
+    <th>descripcion</th> 
+    <th>imagen</th>
+    <th>categoria</th>
+    <th>duracion</th>
+    <th>porciones</th>
+    
+
   </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
+  <tr *ngFor="let i of coleccionRecetas">
+    <!--primera fila -->
+    <td>{{i.titulo}}</td>
+    <td>{{i.descripcion}}</td>
+    <td><img src="{{i.imagen}}" alt="{{i.alt}}"></td>
+    <td>{{i.imagen}}</td>
+    <td>{{i.categoria}}</td>
+    <td>{{i.duracion}}</td>
+    <td>{{i.porciones}}</td>
   </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-  <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-  </tr>
+ 
 </table>
 
 

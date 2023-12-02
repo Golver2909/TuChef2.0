@@ -40,7 +40,7 @@ export class MostrarRecetaComponent {
     })
   }
   async agregarReceta(){ // método para validar esos valores del Receta agregado
-    if(this.Receta.valid){
+    if(this.Receta){
       let nuevaReceta: Receta= {
         id: '',
         titulo: this.Receta.value.titulo!,
