@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from './modules/auth/auth.module';
-import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './modules/home/home.module';
 
 
