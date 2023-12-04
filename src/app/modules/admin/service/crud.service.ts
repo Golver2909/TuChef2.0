@@ -7,7 +7,7 @@ import { async } from '@angular/core/testing';
   providedIn: 'root'
 })
 export class CrudService {
-private productosReceta:AngularFirestoreCollection<Receta>
+private productosReceta:AngularFirestoreCollection<Receta>//colecciona todas las recetas
 
 
 constructor(private database: AngularFirestore) {
@@ -18,7 +18,7 @@ constructor(private database: AngularFirestore) {
 crearReceta(Receta:Receta){
   return new Promise (async(resolve, reject)=>{
     try{
-      const id= this.database.createId();
+      const id= this.database.createId();//Id automatico
       Receta.id=id
 
       const resultado =await this.productosReceta.doc(id).set(Receta)
@@ -35,16 +35,17 @@ crearReceta(Receta:Receta){
  obtenerRecetas(){
   return this.productosReceta.snapshotChanges().
   pipe(map(action =>action.map(a=>a.payload.doc.data())))
- }
+ }//estudiar
 
 
  modificarrReceta(id:string,   nuevaData:Receta){
   return this.database.collection('Receta').doc(id).update(nuevaData)
+
  }
  
 
 
- aliminarReceta(id:string){
+eliminarReceta(id:string){
   return new Promise((resolve, reject) =>{
     try{
       const resp = this.productosReceta.doc(id).delete()
@@ -52,12 +53,12 @@ crearReceta(Receta:Receta){
     }
     catch(error){
       reject (error)
-      alert("se produjo un error al eliminar el producto  adasdasdas\n"+error)
+      alert("se produjo un error al eliminar el producto  \n"+error)
     }
   })
 }
 
-  
+ 
 
 
 }

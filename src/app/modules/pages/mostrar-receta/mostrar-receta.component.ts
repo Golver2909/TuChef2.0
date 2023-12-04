@@ -8,7 +8,7 @@ import { CrudService } from "../../admin/service/crud.service";
   styleUrls: ['./mostrar-receta.component.css']
 })
 export class MostrarRecetaComponent {
-  coleccionRecetas:Receta []=[]
+  coleccionRecetas:Receta []=[]//colecciona todas las recetas
 
 
 
@@ -37,7 +37,7 @@ export class MostrarRecetaComponent {
   ngOnInit(): void{
     this.servicioCrud.obtenerRecetas().subscribe(Receta => {
       this.coleccionRecetas = Receta;
-    })
+    })///estudiar
   }
   async agregarReceta(){ // método para validar esos valores del Receta agregado
     if(this.Receta){
@@ -70,7 +70,7 @@ export class MostrarRecetaComponent {
   mostrarEditar(RecetaSeleccionada: Receta){
     this.RecetaSeleccionada = RecetaSeleccionada;
 
-    this.Receta.setValue({
+    this.Receta.setValue({//estudiar setValue (coloca los valores en los inputs)
       titulo: RecetaSeleccionada.titulo,
       descripcion: RecetaSeleccionada.descripcion,
       imagen: RecetaSeleccionada.imagen,
@@ -95,12 +95,12 @@ editarReceta(){
 
   this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id,datos)
   .then(Receta => {
-    alert("El Receta fue modificado con éxito :).");
+    alert("La Receta fue modificado con éxito :).");
   })
   .catch(error => {
-    alert("No se pudo modificar el Receta :( \n"+error);
+    alert("la receta no se pudo modificar :( \n"+error);
   })
-}
+}  
 
 // ELIMINAR EL Receta
 mostrarBorrar(RecetaSeleccionado: Receta){ // botón para el modal
@@ -109,12 +109,12 @@ mostrarBorrar(RecetaSeleccionado: Receta){ // botón para el modal
 }
 
 borrarReceta(){ // botón para eliminar definitivamente
-  this.servicioCrud.aliminarReceta(this.RecetaSeleccionada.id)
+  this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
   .then(respuesta => {
-    alert("El Receta se ha eliminado correctamente :)");
+    alert("La Receta se ha eliminado correctamente :)");
   })
   .catch(error => {
-    alert("No se ha podido eliminar el Receta :( \n"+error);
+    alert("No se ha podido eliminar la Receta :( \n"+error);
   })
 }
 }
