@@ -8,9 +8,7 @@ import { CrudService } from "../../admin/service/crud.service";
   styleUrls: ['./mostrar-receta.component.css']
 })
 export class MostrarRecetaComponent {
-  coleccionRecetas:Receta []=[]
-
-  receta:Receta[]=[]
+  coleccionRecetas:Receta []=[];
 
   RecetaSeleccionada!:Receta;
 

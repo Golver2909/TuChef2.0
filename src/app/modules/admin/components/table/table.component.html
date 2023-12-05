@@ -29,7 +29,10 @@
     <td>{{i.categoria}}</td>
     <td>{{i.duracion}}</td>
     <td>{{i.porciones}}</td>
-    <td><button (click)="borrarReceta(i)">borrarReceta</button></td>
+    <td>
+        <button class="button" (click)="borrarReceta(i)">borrarReceta</button>
+        <button class="button" (click)="mostrarEditar(i)">editarreceta</button>
+    </td>
   </tr>
 
 </table>

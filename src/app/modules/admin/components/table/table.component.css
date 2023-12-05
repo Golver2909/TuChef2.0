@@ -11,7 +11,10 @@ th, td {
     text-align: left;
 }
 table#t01 tr:nth-child(even) {
-    background-color: #eee;
+  background: #ED4264;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFEDBC, #ED4264);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFEDBC, #ED4264); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 table#t01 tr:nth-child(odd) {
    background-color: #fff;
@@ -26,4 +29,8 @@ table#t01 th {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+.button{
+  padding: 2px;
+  border-radius: 15px;
 }

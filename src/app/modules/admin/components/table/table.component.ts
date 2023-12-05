@@ -48,7 +48,7 @@ export class TableComponent {
   mostrarEditar(RecetaSeleccionada: Receta){
     this.RecetaSeleccionada = RecetaSeleccionada;
 
-    this.Receta.setValue({//estudiar setValue (coloca los valores en los inputs)
+    this.Receta.setValue({//(coloca los valores en los inputs)
       titulo: RecetaSeleccionada.titulo,
       descripcion: RecetaSeleccionada.descripcion,
       imagen: RecetaSeleccionada.imagen,
@@ -59,10 +59,30 @@ export class TableComponent {
 
     })
     this.router.navigate(["/mostrar"]);
+    let datos: Receta = {
+      id: this.RecetaSeleccionada.id,
+      titulo: this.Receta.value.titulo!,
+      descripcion: this.Receta.value.descripcion!,
+      imagen: this.Receta.value.imagen!,
+      alt: this.Receta.value.alt!,
+      categoria: this.Receta.value.categoria!,
+      duracion: this.Receta.value.duracion!,
+      porciones: this.Receta.value.porciones!
+    }
+
+    this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id,datos)
+    .then(Receta => {
+      alert("La Receta fue modificado con éxito :).");
+    })
+    .catch(error => {
+      alert("la receta no se pudo modificar :( \n"+error);
+    })
+
 
   }
 
-editarReceta(){
+/*editarReceta(){
+
   let datos: Receta = {
     id: this.RecetaSeleccionada.id,
     titulo: this.Receta.value.titulo!,
@@ -82,23 +102,8 @@ editarReceta(){
     alert("la receta no se pudo modificar :( \n"+error);
   })
 }
+*/
 
-// ELIMINAR EL Receta
-//mostrarBorrar(RecetaSeleccionado: Receta){ // botón para el modal
-
-//  this.RecetaSeleccionada = RecetaSeleccionado; // asigna Receta elegido
-//}
-
-//borrarReceta(){ // botón para eliminar definitivamente
-
-//  this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
-//  .then(respuesta => {
-//    alert("La Receta se ha eliminado correctamente :)");
-//  })
-//  .catch(error => {
-//    alert("No se ha podido eliminar la Receta :( \n"+error);
-//  })
-//}
 
 borrarReceta(RecetaSeleccionada: Receta){
   this.RecetaSeleccionada = RecetaSeleccionada; // asigna Receta elegido
@@ -114,4 +119,5 @@ borrarReceta(RecetaSeleccionada: Receta){
   }
 }
 }
+
 
