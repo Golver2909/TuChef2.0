@@ -7,6 +7,7 @@ import { InicioComponent } from './modules/principal/pages/inicio/inicio.compone
 
 const routes: Routes = [
   //aplicando carga perezosa en las rutas
+  //rutas primarias
   {
     path:'',component:InicioComponent
   },
