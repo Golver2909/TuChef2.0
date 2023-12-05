@@ -9,9 +9,9 @@
       <i class="material-icons" style="font-size: 150px">person</i>
     </div>
     <div class="col">
-      <br><br><br><br><br><br><br><br><br><br><br><br>
-      <button class="boton">Cambiar foto de perfil</button>
-      <button class="boton2">Eliminar foto</button>
+      <br><br><br><br><br><br><br><br><br><br>
+      <button  type="button" class="btn btn-warning">Cambiar foto de perfil</button>
+      <button  class="btn btn-danger">Eliminar foto</button>
     </div>
   </div>
 </div>
@@ -19,3 +19,30 @@
 <br>
 <br>
 <hr>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <br>
+      <h2>Nombre de usuario</h2>
+      <br>
+      <br>
+      <h3>Aún no ha iniciado sesión</h3>
+    </div>
+    <div class="col">
+      <br><br><br><br>
+      <button  type="button" class="btn btn-warning">Editar nombre</button>
+      <button  class="btn btn-warning">Editar correo electrónico</button>
+
+      <button mat-button color="warn" mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+    </div>
+  </div>
+</div>
+
+

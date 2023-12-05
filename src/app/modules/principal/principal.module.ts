@@ -6,7 +6,8 @@ import { PrincipalRoutingModule } from './principal-routing.module';
 import { ConfigUsuarioComponent } from './pages/config-usuario/config-usuario.component';
 
 //ANGULAR
-import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -18,11 +19,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
   imports: [
     CommonModule,
     PrincipalRoutingModule,
-    MatGridListModule
+    MatButtonModule,
+    MatMenuModule
   ],
   exports:[
     InicioComponent,
-    MatGridListModule
+    MatButtonModule,
+    MatMenuModule
   ]
 })
 export class PrincipalModule { }
