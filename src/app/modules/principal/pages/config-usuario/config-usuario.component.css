@@ -1,0 +1,14 @@
+.boton{
+  position: relative;
+  border-radius: 25px;
+  min-width: 25%;
+  max-width: 40%;
+
+}
+.boton2{
+  position: relative;
+  border-radius: 25px;
+  min-width: 25%;
+  max-width: 40%;
+  margin-left: 1%;
+}

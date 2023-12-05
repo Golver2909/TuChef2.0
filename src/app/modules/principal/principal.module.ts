@@ -5,6 +5,10 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { PrincipalRoutingModule } from './principal-routing.module';
 import { ConfigUsuarioComponent } from './pages/config-usuario/config-usuario.component';
 
+//ANGULAR
+import {MatGridListModule} from '@angular/material/grid-list';
+
+
 
 @NgModule({
   declarations: [
@@ -13,10 +17,12 @@ import { ConfigUsuarioComponent } from './pages/config-usuario/config-usuario.co
   ],
   imports: [
     CommonModule,
-    PrincipalRoutingModule
+    PrincipalRoutingModule,
+    MatGridListModule
   ],
   exports:[
-    InicioComponent
+    InicioComponent,
+    MatGridListModule
   ]
 })
 export class PrincipalModule { }
