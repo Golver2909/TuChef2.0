@@ -8,14 +8,14 @@ import { CrudService } from "../../admin/service/crud.service";
   styleUrls: ['./mostrar-receta.component.css']
 })
 export class MostrarRecetaComponent {
-  coleccionRecetas:Receta []=[]//colecciona todas las recetas
+  coleccionRecetas:Receta []=[]
 
-
+  receta:Receta[]=[]
 
   RecetaSeleccionada!:Receta;
 
   Receta = new FormGroup({
-  
+
     titulo: new FormControl('',Validators.required),
     descripcion:new FormControl('',Validators.required),
     imagen:new FormControl('',Validators.required),
@@ -24,20 +24,20 @@ export class MostrarRecetaComponent {
     duracion: new FormControl('',Validators.required),
     porciones: new FormControl('',Validators.required),
 
-     
 
-   
+
+
   })
 
   constructor( public servicioCrud: CrudService){
 
   }
 
-  
+
   ngOnInit(): void{
     this.servicioCrud.obtenerRecetas().subscribe(Receta => {
       this.coleccionRecetas = Receta;
-    })///estudiar
+    })
   }
   async agregarReceta(){ // método para validar esos valores del Receta agregado
     if(this.Receta){
@@ -50,7 +50,7 @@ export class MostrarRecetaComponent {
         categoria: this.Receta.value.categoria!,
         duracion: this.Receta.value.duracion!,
         porciones: this.Receta.value.porciones!
-        
+
       };
 
       // llamamos al servicioCrud; función crearReceta; seteamos nuevoReceta
@@ -70,7 +70,7 @@ export class MostrarRecetaComponent {
   mostrarEditar(RecetaSeleccionada: Receta){
     this.RecetaSeleccionada = RecetaSeleccionada;
 
-    this.Receta.setValue({//estudiar setValue (coloca los valores en los inputs)
+    this.Receta.setValue({
       titulo: RecetaSeleccionada.titulo,
       descripcion: RecetaSeleccionada.descripcion,
       imagen: RecetaSeleccionada.imagen,
@@ -80,7 +80,7 @@ export class MostrarRecetaComponent {
       porciones: RecetaSeleccionada.porciones
     })
   }
-  
+
 editarReceta(){
   let datos: Receta = {
     id: this.RecetaSeleccionada.id,
@@ -95,27 +95,26 @@ editarReceta(){
 
   this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id,datos)
   .then(Receta => {
-    alert("La Receta fue modificado con éxito :).");
+    alert("El Receta fue modificado con éxito :).");
   })
   .catch(error => {
-    alert("la receta no se pudo modificar :( \n"+error);
+    alert("No se pudo modificar el Receta :( \n"+error);
   })
-}  
+}
 
 // ELIMINAR EL Receta
 mostrarBorrar(RecetaSeleccionado: Receta){ // botón para el modal
-  
+
   this.RecetaSeleccionada = RecetaSeleccionado; // asigna Receta elegido
 }
 
 borrarReceta(){ // botón para eliminar definitivamente
   this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
   .then(respuesta => {
-    alert("La Receta se ha eliminado correctamente :)");
+    alert("El Receta se ha eliminado correctamente :)");
   })
   .catch(error => {
-    alert("No se ha podido eliminar la Receta :( \n"+error);
+    alert("No se ha podido eliminar el Receta :( \n"+error);
   })
 }
 }
-

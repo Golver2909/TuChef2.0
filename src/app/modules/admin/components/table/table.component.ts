@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
 })
 export class TableComponent {
   coleccionRecetas:Receta []=[]//colecciona todas las recetas
-  
+
 
 
   RecetaSeleccionada!:Receta;
 
   Receta = new FormGroup({
-  
+
     titulo: new FormControl('',Validators.required),
     descripcion:new FormControl('',Validators.required),
     imagen:new FormControl('',Validators.required),
@@ -25,23 +25,23 @@ export class TableComponent {
     duracion: new FormControl('',Validators.required),
     porciones: new FormControl('',Validators.required),
 
-     
 
-   
+
+
   })
 
-  constructor( 
+  constructor(
     public servicioCrud: CrudService,
     public router: Router
     ){}
 
-  
+
   ngOnInit(): void{
     this.servicioCrud.obtenerRecetas().subscribe(Receta => {
       this.coleccionRecetas = Receta;
     })///estudiar
   }
-  
+
 
 
 
@@ -56,12 +56,12 @@ export class TableComponent {
       categoria: RecetaSeleccionada.categoria,
       duracion: RecetaSeleccionada.duracion,
       porciones: RecetaSeleccionada.porciones
-    
+
     })
     this.router.navigate(["/mostrar"]);
-    
+
   }
-  
+
 editarReceta(){
   let datos: Receta = {
     id: this.RecetaSeleccionada.id,
@@ -81,22 +81,37 @@ editarReceta(){
   .catch(error => {
     alert("la receta no se pudo modificar :( \n"+error);
   })
-}  
-
-// ELIMINAR EL Receta
-mostrarBorrar(RecetaSeleccionado: Receta){ // botón para el modal
-  
-  this.RecetaSeleccionada = RecetaSeleccionado; // asigna Receta elegido
 }
 
-borrarReceta(){ // botón para eliminar definitivamente
-  this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
+// ELIMINAR EL Receta
+//mostrarBorrar(RecetaSeleccionado: Receta){ // botón para el modal
+
+//  this.RecetaSeleccionada = RecetaSeleccionado; // asigna Receta elegido
+//}
+
+//borrarReceta(){ // botón para eliminar definitivamente
+
+//  this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
+//  .then(respuesta => {
+//    alert("La Receta se ha eliminado correctamente :)");
+//  })
+//  .catch(error => {
+//    alert("No se ha podido eliminar la Receta :( \n"+error);
+//  })
+//}
+
+borrarReceta(RecetaSeleccionada: Receta){
+  this.RecetaSeleccionada = RecetaSeleccionada; // asigna Receta elegido
+
+  if(confirm("¿Está seguro?") === true){
+    this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
   .then(respuesta => {
     alert("La Receta se ha eliminado correctamente :)");
   })
   .catch(error => {
     alert("No se ha podido eliminar la Receta :( \n"+error);
   })
+  }
 }
 }
 

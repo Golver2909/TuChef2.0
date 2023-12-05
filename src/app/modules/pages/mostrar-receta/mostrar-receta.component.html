@@ -1,44 +1,44 @@
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
 
 
-
-
-
-
-<div class="container text-center" id="agregarReceta" [formGroup]="Receta">
-  <div class="row">
-    <div class="col">
-      <div class="rectangulo">
-        <form class="example-form2">
-          <mat-label><p align="center">Nombre Receta</p></mat-label>
+  <form class="container text-center" id="Receta" [formGroup]="Receta" (ngSubmit)="agregarReceta()">
+    <div class="row">
+      <div class="col">
+        <div class="rectangulo">
+          <mat-label><p align="center">Nombre Receta:</p></mat-label>
           <mat-form-field class="example-form-field">
-            <input matInput type="text" placeholder="Ingrese nombre de la receta" formControlName="titulo">
+            <input matInput type="textarea" placeholder="Ingrese nombre de la receta" id="titulo" formControlName="titulo">
           </mat-form-field>
-        </form>
-      </div>
-      <br/>
-      <div class="row">
-        <div class="col-5">
-          <br>
-          <div class="row">
-            <div class="col">
-              <div class="cuadrado">
-                <form class="example-form">
+
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-5">
+            <br/>
+            <div class="row">
+              <div class="col">
+                <div class="cuadrado">
                   <mat-label class="texto">
                     <p align="center">Porciones</p>
                   </mat-label>
                   <mat-form-field class="example-full-width">
                     <input matInput type="number" formControlName="porciones">
                   </mat-form-field>
-                </form>
-              </div>
-              <br />
-              <div class="cuadrado">
-                <form class="example-form">
+                </div>
+                <br />
+                <div class="cuadrado">
                   <label class="texto">
-                    <p align="center">Tiempo de preparación:</p>
+                    <p align="center">Tiempo de preparacion:</p>
                   </label>
                   <mat-form-field class="example-full-width">
                     <span matPrefix>
@@ -46,34 +46,48 @@
                     </span>
                     <input class="inp-tie" type="time" matInput formControlName="duracion">
                   </mat-form-field>
-                </form>
-              </div>
-              <br>
-              <div class="cua-foto">
-                <mat-icon class="foto">add_a_photo</mat-icon>
+                </div>
+                <br>
+                <div class="cua-foto">
+                  <input type="text"  formControlName="imagen">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="col">
-          <p>descripcion</p>
-            <div class="cuadrado3">
-              <textarea class="texa"></textarea>
-            </div>
-         
+          <div class="col">
+            <table class="cuadrado3">
+             <textarea cols="30" rows="10" formControlName=""></textarea>
+            </table>
+          </div>
         </div>
       </div>
+      <div class="col cuadrado2">
+        <h2>Procedimiento</h2>
+        <p class="cuadrado2">
+          <textarea class="texa" formControlName="descripcion"></textarea>
+        </p>
+      </div>
     </div>
+    <div>
+      <button type="submit">Enviar Receta</button>
+    </div>
+  </form>
 
-    <div class="col cuadrado2">
-      <h2>Procedimiento</h2>
-      <p class="cuadrado2">
-        <textarea class="texa" formControlName="descripcion"></textarea>
-      </p>
-    </div>
-  </div>
-  <div>
-    <button type="button" (click)="agregarReceta()">Enviar Receta</button>
-  </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
