@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path:'',component:InicioComponent
-  }
+  },
   {
     path:'config-usuario',component:ConfigUsuarioComponent
   }
