@@ -59,50 +59,36 @@ export class TableComponent {
       porciones: RecetaSeleccionada.porciones
 
     })
-    this.router.navigate(["/mostrar"]);
-    let datos: Receta = {
-      id: this.RecetaSeleccionada.id,
-      titulo: this.Receta.value.titulo!,
-      descripcion: this.Receta.value.descripcion!,
-      imagen: this.Receta.value.imagen!,
-      alt: this.Receta.value.alt!,
-      categoria: this.Receta.value.categoria!,
-      duracion: this.Receta.value.duracion!,
-      porciones: this.Receta.value.porciones!
+  
+
+
+  }
+
+  editarReceta() {
+    if (this.RecetaSeleccionada && this.RecetaSeleccionada.id) {
+      let datos: Receta = {
+        id: this.RecetaSeleccionada.id,
+        titulo: this.Receta.value.titulo!,
+        descripcion: this.Receta.value.descripcion!,
+        imagen: this.Receta.value.imagen!,
+        alt: this.Receta.value.alt!,
+        categoria: this.Receta.value.categoria!,
+        duracion: this.Receta.value.duracion!,
+        porciones: this.Receta.value.porciones!
+      };
+
+      this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id, datos)
+        .then(() => {
+          alert("La Receta fue modificada con éxito :).");
+        })
+        .catch(error => {
+          alert("La receta no se pudo modificar :( \n" + error);
+        });
+    } else {
+      console.error("RecetaSeleccionada es undefined o no tiene una propiedad 'id'.");
     }
-
-    this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id,datos)
-    .then(Receta => {
-      alert("La Receta fue modificado con éxito :).");
-    })
-    .catch(error => {
-      alert("la receta no se pudo modificar :( \n"+error);
-    })
-
-
   }
 
-editarReceta(){
-
-  let datos: Receta = {
-    id: this.RecetaSeleccionada.id,
-    titulo: this.Receta.value.titulo!,
-    descripcion: this.Receta.value.descripcion!,
-    imagen: this.Receta.value.imagen!,
-    alt: this.Receta.value.alt!,
-    categoria: this.Receta.value.categoria!,
-    duracion: this.Receta.value.duracion!,
-    porciones: this.Receta.value.porciones!
-  }
-
-  this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id,datos)
-  .then(Receta => {
-    alert("La Receta fue modificado con éxito :).");
-  })
-  .catch(error => {
-    alert("la receta no se pudo modificar :( \n"+error);
-  })
-}
 
 
 

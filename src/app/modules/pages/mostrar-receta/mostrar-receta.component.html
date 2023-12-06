@@ -2,7 +2,7 @@
   <div class="cointainer text-center" id="agregarReceta" [formGroup]="Receta">
     <div class="row">
       <!--divicion de la pantalla en dos (1/2), separando el procedimiento del resto-->
-      <div class="col"> 
+      <div class="col">
             <div class="rectangulo">
               <form class="example-form2">
                 <mat-label><p align="center">Nombre Receta:</p></mat-label>
@@ -18,7 +18,7 @@
         <!--coloca el siguiente codigo abajo del input para nombrar receta-->
         <div class="row">
           <!--divide la mitad de la pantalla que quedaba (1/4), en un poco menos de la mitad dejando en el lado mas chico los input de tiempo, porciones y foto-->
-          <div class="col-5"> 
+          <div class="col-5">
             <br />
                 <div class="cuadrado">
                   <form class="example-form">
@@ -65,7 +65,10 @@
       </div>
     </div>
     <div>
-      <button type="button" (click)="agregarReceta()">Enviar Receta</button>
+      <button (click)="agregarReceta()" routerLink="/table">Enviar Receta</button>
+
+
     </div>
-  </div>  
+  </div>
+
 </body>

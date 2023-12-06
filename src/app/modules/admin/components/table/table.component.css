@@ -11,9 +11,9 @@ th, td {
     text-align: left;
 }
 table#t01 tr:nth-child(even) {
-  background: #ED4264;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #020202, #ED4264);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #1e1e1b, #ED4264); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #42ed50;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,  #fbfb5e, #42ed50);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fbfb5e, #42ed50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 table#t01 tr:nth-child(odd) {
