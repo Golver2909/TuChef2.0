@@ -13,7 +13,6 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { PrincipalModule } from './modules/principal/principal.module';
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -28,6 +27,7 @@ import { PrincipalModule } from './modules/principal/principal.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule,
+    SharedModule,
     PrincipalModule
   ],
   providers: [],

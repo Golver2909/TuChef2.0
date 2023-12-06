@@ -1,0 +1,18 @@
+button{
+  padding: 5px;
+  margin: 30px;
+}
+
+input{
+  padding: 5px;
+  margin: 30px;
+  width: 50%;
+}
+
+label{
+  padding-left: 100px;
+}
+
+.texto1{
+  padding-left: 50px;
+}

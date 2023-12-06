@@ -70,12 +70,13 @@ export class LoginComponent {
       })
     }
    
-    
+ 
 
     ngOnInit(): void{
       this.servicioAuth.obtenerUsuario().subscribe(usuario => {
         this.coleccionUsuarios = usuario;
       })
     }
+
     
 }
