@@ -77,8 +77,5 @@ export class LoginComponent {
         this.coleccionUsuarios = usuario;
       })
     }
-
-
-    
     
 }
