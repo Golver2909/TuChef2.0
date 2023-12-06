@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';//
 import { AppComponent } from './app.component';//
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeRoutingModule } from './modules/home/home-routing.module';
 // FIREBASE
 // Nos conectamos con la BD; NOS TRAE MÓDULOS NECESARIOS
 import { AngularFireStorageModule } from "@angular/fire/compat/storage";
@@ -31,6 +32,7 @@ import { AdminModule } from './modules/admin/admin.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HomeRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
     // Configuración de módulos FIREBASE

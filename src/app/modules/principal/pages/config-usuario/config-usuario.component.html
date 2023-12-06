@@ -1,0 +1,101 @@
+<div class="container"> <!--Utilizamos divs para agrupar y darle orden a los elementos-->
+  <div class="row">
+    <div class="col-3">
+      <br>
+      <h2>Configurar Cuenta</h2>
+      <br>
+      <br>
+      <h3>Foto de perfil</h3>
+      <i class="material-icons" style="font-size: 150px">person</i>
+    </div>
+    <div class="col">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <button type="button" class="btn btn-warning">Cambiar foto de perfil</button>
+      <button class="btn btn-danger">Eliminar foto</button>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <br>
+      <h2>Nombre de usuario</h2>
+      <br>
+      <br>
+      <h3>Aún no ha iniciado sesión</h3> 
+      <!--Aquí debería aparecer el email del usuario si es que ha iniciado sesión;
+      en caso de que no se cumpla esto, aparecerá por defecto que el usuario no
+      ha iniciado sesiín (esta funcionalidad no está terminada por ahora)-->
+    </div>
+    <div class="col">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Ingrese nombre de usuario"
+          aria-label="Recipient's username with two button addons">
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <hr>
+  <br>
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <br>
+        <h2>Correo electrónico</h2>
+        <br>
+        <br>
+        <h3>correoejemplo@gmail.com</h3>
+      </div>
+      <div class="col">
+        
+        <br>
+
+        <h3 class="texto1">Editar correo electrónico</h3>
+        <input type="email" class="form-control" placeholder="Ingrese un correo electrónico" id="email"
+          aria-describedby="emailHelp">
+        <!--Input de tipo email, debe ingresar un correo electrónico si o si-->
+
+        <br>
+        <br>
+
+        <h3 class="texto1">Editar contraseña</h3>
+        <input type="password" class="form-control" placeholder="Ingrese una contraseña" id="contraseña"> 
+        <!--Input de tipo contraseña si las letras no se ven-->
+      
+      </div>
+    </div> 
+  </div>
+</div>     <!--Las funcionalidades a algunos botones e inputs no fueron aplicadas-->
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+<button type="submit" class="btn btn-success">Guardar cambios</button>
+<button routerLink="/inicio" class="btn btn-danger">Volver a la pagina</button> <!--Botón para volver al home-->
