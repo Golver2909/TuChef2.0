@@ -7,11 +7,13 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
+import { CardsComponent } from './components/cards/cards.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
+    CardsComponent,
    NavbarComponent,
    FooterComponent
   ],
@@ -30,6 +32,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MatButtonModule,
     MatMenuModule,
     NavbarComponent,
+    CardsComponent,
     FooterComponent
   ]
 })
