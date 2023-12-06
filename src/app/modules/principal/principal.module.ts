@@ -9,6 +9,7 @@ import { ConfigUsuarioComponent } from './pages/config-usuario/config-usuario.co
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { AyudaUsuarioComponent } from './pages/ayuda-usuario/ayuda-usuario.component';
 
 
 
@@ -16,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     InicioComponent,
     ConfigUsuarioComponent,
+    AyudaUsuarioComponent,
   ],
   imports: [
     CommonModule,
