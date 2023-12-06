@@ -5,7 +5,7 @@ import { PaginaRecetasComponent } from './pages/pagina-recetas/pagina-recetas.co
 const routes: Routes = [
   {
     path:'pagina-recetas',component:PaginaRecetasComponent
-  }
+  },
 ];
 
 @NgModule({
