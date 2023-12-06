@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Receta } from 'src/app/models/receta';
 import { CrudService } from "../../service/crud.service";
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -81,7 +82,7 @@ export class TableComponent {
 
   }
 
-/*editarReceta(){
+editarReceta(){
 
   let datos: Receta = {
     id: this.RecetaSeleccionada.id,
@@ -102,7 +103,7 @@ export class TableComponent {
     alert("la receta no se pudo modificar :( \n"+error);
   })
 }
-*/
+
 
 
 borrarReceta(RecetaSeleccionada: Receta){
