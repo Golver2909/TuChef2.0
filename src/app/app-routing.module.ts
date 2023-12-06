@@ -8,10 +8,10 @@ import { InicioComponent } from './modules/principal/pages/inicio/inicio.compone
 
 
 const routes: Routes = [
+{
+  path:'',component:InicioComponent
+},
   //aplicando carga perezosa en las rutas
-  {
-    path:'',component:InicioComponent
-  },
 {
   path:'', loadChildren:()=>import('./modules/auth/auth.module').then(m => m.AuthModule)
 },
