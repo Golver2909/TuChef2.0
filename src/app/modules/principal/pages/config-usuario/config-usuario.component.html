@@ -10,8 +10,8 @@
     </div>
     <div class="col">
       <br><br><br><br><br><br><br><br><br><br>
-      <button  type="button" class="btn btn-warning">Cambiar foto de perfil</button>
-      <button  class="btn btn-danger">Eliminar foto</button>
+      <button type="button" class="btn btn-warning">Cambiar foto de perfil</button>
+      <button class="btn btn-danger">Eliminar foto</button>
     </div>
   </div>
 </div>
@@ -33,16 +33,52 @@
     </div>
     <div class="col">
       <br><br><br><br>
-      <button  type="button" class="btn btn-warning">Editar nombre</button>
-      <button  class="btn btn-warning">Editar correo electrónico</button>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Ingrese nombre de usuario"
+          aria-label="Recipient's username with two button addons">
+      </div>
+    </div>
+  </div>
 
-      <button mat-button color="warn" mat-button [matMenuTriggerFor]="menu">Menu</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
+  <br>
+  <br>
+  <hr>
+  <br>
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <br>
+        <h2>Correo electrónico</h2>
+        <br>
+        <br>
+        <h3>correoejemplo@gmail.com</h3>
+      </div>
+      <div class="col">
+        
+        <br>
+
+        <h3 class="texto1">Editar correo electrónico</h3>
+        <input type="email" class="form-control" placeholder="Ingrese un correo electrónico" id="email"
+          aria-describedby="emailHelp">
+
+        <br>
+        <br>
+
+        <h3 class="texto1">Editar contraseña</h3>
+        <input type="password" class="form-control" placeholder="Ingrese una contraseña" id="contraseña">
+
+      </div>
     </div>
   </div>
 </div>
 
+<br>
+<br>
+<hr>
+<br>
+<br>
 
+<button type="submit" class="btn btn-success">Guardar cambios</button>
+<button routerLink="/inicio" class="btn btn-danger">Volver a la pagina</button>

@@ -8,6 +8,7 @@ import { ConfigUsuarioComponent } from './pages/config-usuario/config-usuario.co
 //ANGULAR
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -20,12 +21,14 @@ import {MatMenuModule} from '@angular/material/menu';
     CommonModule,
     PrincipalRoutingModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatIconModule
   ],
   exports:[
     InicioComponent,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatIconModule
   ]
 })
 export class PrincipalModule { }
