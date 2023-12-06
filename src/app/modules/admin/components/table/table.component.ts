@@ -10,46 +10,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-  coleccionRecetas:Receta []=[]//colecciona todas las recetas
+  coleccionRecetas: Receta[] = []; // Colección de todas las recetas
+  RecetaSeleccionada!: Receta;
 
-
-
-  RecetaSeleccionada!:Receta;
-
+  // Formulario para la Receta
   Receta = new FormGroup({
-
-    titulo: new FormControl('',Validators.required),
-    descripcion:new FormControl('',Validators.required),
-    imagen:new FormControl('',Validators.required),
-    alt: new FormControl('',Validators.required),
-    categoria: new FormControl('',Validators.required),
-    duracion: new FormControl('',Validators.required),
-    porciones: new FormControl('',Validators.required),
-
-
-
-
+    titulo: new FormControl('', Validators.required),
+    descripcion: new FormControl('', Validators.required),
+    imagen: new FormControl('', Validators.required),
+    alt: new FormControl('', Validators.required),
+    categoria: new FormControl('', Validators.required),
+    duracion: new FormControl('', Validators.required),
+    porciones: new FormControl('', Validators.required),
   })
 
   constructor(
     public servicioCrud: CrudService,
     public router: Router
-    ){}
+  ) {}
 
-
-  ngOnInit(): void{
+  ngOnInit(): void {
+    // Obtener recetas al inicializar el componente
     this.servicioCrud.obtenerRecetas().subscribe(Receta => {
       this.coleccionRecetas = Receta;
-    })///estudiar
+    })
   }
 
-
-
-
-  mostrarEditar(RecetaSeleccionada: Receta){
+  // Mostrar modal de edición con datos de la Receta seleccionada
+  mostrarEditar(RecetaSeleccionada: Receta) {
     this.RecetaSeleccionada = RecetaSeleccionada;
 
-    this.Receta.setValue({//(coloca los valores en los inputs)
+    this.Receta.setValue({
       titulo: RecetaSeleccionada.titulo,
       descripcion: RecetaSeleccionada.descripcion,
       imagen: RecetaSeleccionada.imagen,
@@ -57,13 +48,10 @@ export class TableComponent {
       categoria: RecetaSeleccionada.categoria,
       duracion: RecetaSeleccionada.duracion,
       porciones: RecetaSeleccionada.porciones
-
-    })
-  
-
-
+    });
   }
 
+  // Editar la Receta seleccionada
   editarReceta() {
     if (this.RecetaSeleccionada && this.RecetaSeleccionada.id) {
       let datos: Receta = {
@@ -89,22 +77,18 @@ export class TableComponent {
     }
   }
 
+  // Eliminar la Receta seleccionada
+  borrarReceta(RecetaSeleccionada: Receta) {
+    this.RecetaSeleccionada = RecetaSeleccionada;
 
-
-
-borrarReceta(RecetaSeleccionada: Receta){
-  this.RecetaSeleccionada = RecetaSeleccionada; // asigna Receta elegido
-
-  if(confirm("¿Está seguro?") === true){
-    this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
-  .then(respuesta => {
-    alert("La Receta se ha eliminado correctamente :)");
-  })
-  .catch(error => {
-    alert("No se ha podido eliminar la Receta :( \n"+error);
-  })
+    if (confirm("¿Está seguro?") === true) {
+      this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
+        .then(respuesta => {
+          alert("La Receta se ha eliminado correctamente :)");
+        })
+        .catch(error => {
+          alert("No se ha podido eliminar la Receta :( \n" + error);
+        })
+    }
   }
 }
-}
-
-
