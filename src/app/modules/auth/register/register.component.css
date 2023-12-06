@@ -1,8 +1,8 @@
-.centered-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ajusta la altura al 100% del viewport para centrar verticalmente */
-  }
+  .row{
+    text-align: center;
+}
+
+.boton{
+    margin-top: 1.5%;
+}
  

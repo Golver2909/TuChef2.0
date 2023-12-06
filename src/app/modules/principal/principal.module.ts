@@ -12,7 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { AyudaUsuarioComponent } from './pages/ayuda-usuario/ayuda-usuario.component';
 
 
-
 @NgModule({
   declarations: [
     InicioComponent,
