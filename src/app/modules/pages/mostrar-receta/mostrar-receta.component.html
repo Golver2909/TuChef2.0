@@ -1,74 +1,64 @@
-<body class="fondo">
-  <div class="cointainer text-center" id="agregarReceta" [formGroup]="Receta">
-    <div class="row">
-      <!--divicion de la pantalla en dos (1/2), separando el procedimiento del resto-->
-      <div class="col">
-            <div class="rectangulo">
-              <form class="example-form2">
-                <mat-label><p align="center">Nombre Receta:</p></mat-label>
-                <mat-form-field class="example-form-field">
-                  <input
-                    matInput
-                    type="textarea"
-                    placeholder="Ingrese nombre de la receta" formControlName="titulo">
+<form class="container text-center" id="Receta" [formGroup]="Receta" (ngSubmit)="agregarReceta()">
+  <div class="row">
+    <div class="col">
+      <div class="rectangulo">
+        <mat-label><p align="center">Nombre Receta:</p></mat-label>
+        <mat-form-field class="example-form-field">
+          <input matInput type="textarea" placeholder="Ingrese nombre de la receta" id="titulo" formControlName="titulo">
+        </mat-form-field>
+
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-5">
+          <br/>
+          <div class="row">
+            <div class="col">
+              <div class="cuadrado">
+                <mat-label class="texto">
+                  <p align="center">Porciones</p>
+                </mat-label>
+                <mat-form-field class="example-full-width">
+                  <input matInput type="number" formControlName="porciones">
                 </mat-form-field>
-              </form>
+              </div>
+              <br />
+              <div class="cuadrado">
+                <label class="texto">
+                  <p align="center">Tiempo de preparacion:</p>
+                </label>
+                <mat-form-field class="example-full-width">
+                  <span matPrefix>
+                    <mat-icon class="tiempo">schedule</mat-icon>
+                  </span>
+                  <input class="inp-tie" type="time" matInput formControlName="duracion">
+                </mat-form-field>
+              </div>
+              <br>
+              <div class="cua-foto">
+                <form action="">agregre la Url de la imagen
+                  <input type="text"  formControlName="imagen">
+                </form>
+
+              </div>
             </div>
-        <br/>
-        <!--coloca el siguiente codigo abajo del input para nombrar receta-->
-        <div class="row">
-          <!--divide la mitad de la pantalla que quedaba (1/4), en un poco menos de la mitad dejando en el lado mas chico los input de tiempo, porciones y foto-->
-          <div class="col-5">
-            <br />
-                <div class="cuadrado">
-                  <form class="example-form">
-                    <mat-label class="texto">
-                    <p align="center">Porciones</p></mat-label>
-                    <mat-form-field class="example-full-width">
-                      <input matInput type="number" class="inps" formControlName="porciones">
-                    </mat-form-field>
-                  </form>
-                </div>
-                <br />
-                <div class="cuadrado">
-                  <form class="example-form">
-                    <label class="texto">
-                      <p align="center">Tiempo de preparacion:</p>
-                    </label>
-                    <mat-form-field class="example-full-width">
-                      <span matPrefix>
-                        <mat-icon class="tiempo">schedule</mat-icon>
-                      </span>
-                      <input class="inp-tie" type="time" matInput formControlName="duracion">
-                    </mat-form-field>
-                  </form>
-                </div>
-                <br>
-                <div class="cua-foto">
-                  <input class="foto" type="text"  formControlName="imagen">
-                </div>
-          </div>
-          <!--espacio de la tabla (poco mas de 1/4)-->
-          <div class="col">
-            <table class="cuadrado3">
-              <textarea class="foto" formControlName="categoria"></textarea>
-            </table>
           </div>
         </div>
-      </div>
-      <!--Mitad de la pantalla que queda (1/2)-->
-      <div class="col cuadrado2">
-        <h2>Procedimiento</h2>
-        <p class="cuadrado2">
-          <textarea class="texa" formControlName="descripcion"></textarea>
-        </p>
+        <div class="col">
+          <table class="cuadrado3">
+           <textarea cols="30" rows="20" formControlName="categoria"></textarea>
+          </table>
+        </div>
       </div>
     </div>
-    <div>
-      <button (click)="agregarReceta()" routerLink="/table">Enviar Receta</button>
-
-
+    <div class="col cuadrado2">
+      <h2>Procedimiento</h2>
+      <p class="cuadrado2">
+        <textarea class="texa" formControlName="descripcion"></textarea>
+      </p>
     </div>
   </div>
-
-</body>
+  <div>
+    <button type="submit">Enviar Receta</button>
+  </div>
+</form>
