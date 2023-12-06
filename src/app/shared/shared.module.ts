@@ -12,10 +12,11 @@ import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-   NavbarComponent
+   NavbarComponent,
+   FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
     AppRoutingModule,
     // MATERIAL
     MatIconModule,
