@@ -1,13 +1,17 @@
+<!--Crea un contenedor para tener filas de cards-->
 <div class="container">
     <div class="row">
+      <!--Muestra las recetas cargadas automaticamente por el ngFor desde coleccionRecetas del ts-->
         <h2 class="text-black">Recetas recientes</h2>
         <div class="col-lg-4" *ngFor="let i of coleccionRecetas">
             <div class="card">
+              <!--Un div para el frente de los cards con los datos del titulo e imagen-->
                 <div class="face front">
                     <img class="imagen" alt="" mat-card-image src="{{i.imagen}}">
                     <h3 class="borde">{{i.titulo}}</h3>
                 </div>
 
+                <!--Muestra los datos de la receta con interpolacion y agrega iconos-->
                 <div class="face back">
                     <h4 class="borde">{{i.titulo}}</h4>
                     <div>
@@ -19,6 +23,8 @@
                     <div>
                         <p><mat-icon>group</mat-icon> {{i.porciones}}</p>
                     </div>
+
+                    <!--Crea el link para ir a mostrar recetas-->
                     <div class="action">
                         <a href="#" class="btn" routerLink="/mostrarRecetas">
                             <font color="white">recetas</font>
