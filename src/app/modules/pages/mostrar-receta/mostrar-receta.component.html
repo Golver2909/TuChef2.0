@@ -2,7 +2,7 @@
   class="container text-center"
   id="Receta"
   [formGroup]="Receta"
-  
+
 >
   <div class="row">
     <div class="col">
@@ -79,7 +79,8 @@
                             <input
                               type="text"
                               class="form-control"
-                              id="recipient-name"/>
+                              id="recipient-name"
+                              formControlName="imagen"/>
                           </div>
                         </form>
                       </div>
@@ -114,10 +115,14 @@
       <h1>Procedimiento</h1>
       <p class="">
         <textarea class="texa" formControlName="descripcion"></textarea>
-      </p> 
+      </p>
+      <div>
+        <br>
+        <button type="submit" class="button" routerLink="/table" (click)="agregarReceta()"> Enviar Receta</button>
+      </div>
     </div>
   </div>
   <div>
-    <button type="submit" class="button" routerLink="/table" (click)="agregarReceta()">Enviar Receta</button>
+    <br>
   </div>
 </form>

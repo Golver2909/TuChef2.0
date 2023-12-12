@@ -30,12 +30,12 @@
     <td>{{i.duracion}}</td>
     <td>{{i.porciones}}</td>
     <td>
-        <button class="button" (click)="borrarReceta(i)">borrarReceta</button>
-       
+        <button class="button" class="btn btn-danger" (click)="borrarReceta(i)">borrarReceta</button>
+
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarProducto" (click)="mostrarEditar(i)">Editar Producto</button>
 
-       
-      
+
+
         <div class="modal fade" *ngFor="let col of coleccionRecetas" id="editarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -48,7 +48,7 @@
                   <label class="form-label">Ingrese nombre de la receta:</label>
                   <input class="form-control" type="text" formControlName="titulo" placeholder="{{col.titulo}}">
                 </div>
-     
+
                 <div class="mb-3">
                   <label class="form-label">Ingrese una descripción:</label>
                   <input class="form-control" type="text" formControlName="descripcion" placeholder="{{col.descripcion}}">
@@ -64,7 +64,7 @@
                   <input class="form-control" type="text" formControlName="alt" placeholder="{{col.alt}}">
                 </div>
 
-                
+
 
                 <div class="mb-3">
                   <label class="form-label">Coloque el tiempo de preparacion </label>
@@ -75,12 +75,12 @@
                   <label class="form-label">Coloque el tiempo de preparacion </label>
                   <input class="form-control" type="text" formControlName="porciones" placeholder="{{col.porciones}}">
                 </div>
-        
-               
-                
-               
+
+
+
+
               </div>
-        
+
               <!-- ACCIONES DEL MODAL -->
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" (click)="editarReceta()">Guardar cambios</button>
@@ -100,12 +100,12 @@
 </body>
 </html>
    <!--export interface Receta {
-    
-    titulo: 
+
+    titulo:
     descripcion
     imagen
     alt
-    
+
     duracion
     porciones
 }-->

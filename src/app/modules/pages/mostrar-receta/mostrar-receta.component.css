@@ -44,19 +44,16 @@
 
 
 .rectangulo {
-  margin-left: 3.5%;
   width: 96.5%;
-  height: 6rem;
+  height: 15%;
   background: #F0A43A;
   display: grid;
   border-radius: 25px;
-  margin-bottom: 1rem;
   border: 5px solid #05295c; /* Agregado para separar los rectángulos verticalmente */
 }
 
 .cuadrado2 {
-  position: relative; 
-  width: 100%;
+  position: relative;
   background: #F0A43A;
   border-radius: 25px;
   border: 5px solid #05295c;
@@ -64,11 +61,12 @@
 
 .cuadrado3 {
   margin-right: 3%;
-  position: relative; 
+  position: relative;
   width: 100%;
   background: #F0A43A;
   border: 5px solid #05295c;
   border-radius: 25px;
+  height: 1000%;
 }
 
 .container {
@@ -101,33 +99,27 @@
 
 .texa {
   width: 100%;
-  min-height: 45rem;
+  height: 37rem;
   border-radius: 20px;
 }
 
 .button {
-  width: 20%;
+  width: 50%;
   padding: 1%;
   margin: 2% 5%;
   text-align: center;
   border-radius: 25px;
-  color: black;
+  color: rgb(0, 0, 0);
   border: 1px solid #000;
   font-size: 100%;
   cursor: pointer;
-  font-weight: 600;
   bottom: 10%;
   right: 10%;
 }
 
 .button-foto {
+   transition: 0.5s;
   background: rgb(124, 124, 124);
   color: white;
-  transition: 0.5s;
-}
 
-.boton-enviar{
-  background: rgb(0, 255, 0);
-  color: white;
-  transition: 0.5s;
 }
