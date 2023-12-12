@@ -10,85 +10,115 @@ import { Router } from '@angular/router';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-  coleccionRecetas: Receta[] = []; // Colección de todas las recetas
-  RecetaSeleccionada!: Receta;
+  coleccionRecetas:Receta []=[]//colecciona todas las recetas
 
-  // Formulario para la Receta
+
+
+  RecetaSeleccionada!:Receta;
+
   Receta = new FormGroup({
-    titulo: new FormControl('', Validators.required),
-    descripcion: new FormControl('', Validators.required),
-    imagen: new FormControl('', Validators.required),
-    alt: new FormControl('', Validators.required),
-    categoria: new FormControl('', Validators.required),
-    duracion: new FormControl('', Validators.required),
-    porciones: new FormControl('', Validators.required),
+
+    titulo: new FormControl('',Validators.required),
+    descripcion:new FormControl('',Validators.required),
+    imagen:new FormControl('',Validators.required),
+    alt: new FormControl('',Validators.required),
+    ingredientes: new FormControl('', Validators.required),
+    duracion: new FormControl('',Validators.required),
+    porciones: new FormControl('',Validators.required),
+
+
+
+
   })
 
   constructor(
     public servicioCrud: CrudService,
     public router: Router
-  ) {}
+    ){}
 
-  ngOnInit(): void {
-    // Obtener recetas al inicializar el componente
+
+  ngOnInit(): void{
     this.servicioCrud.obtenerRecetas().subscribe(Receta => {
       this.coleccionRecetas = Receta;
-    })
+    })///estudiar
   }
 
-  // Mostrar modal de edición con datos de la Receta seleccionada
-  mostrarEditar(RecetaSeleccionada: Receta) {
+
+
+
+  mostrarEditar(RecetaSeleccionada: Receta){
     this.RecetaSeleccionada = RecetaSeleccionada;
 
-    this.Receta.setValue({
+    this.Receta.setValue({//(coloca los valores en los inputs)
       titulo: RecetaSeleccionada.titulo,
       descripcion: RecetaSeleccionada.descripcion,
       imagen: RecetaSeleccionada.imagen,
       alt: RecetaSeleccionada.alt,
-      categoria: RecetaSeleccionada.categoria,
+      ingredientes: RecetaSeleccionada.ingredientes,
       duracion: RecetaSeleccionada.duracion,
       porciones: RecetaSeleccionada.porciones
-    });
+
+    })
+    this.router.navigate(["/mostrar"]);
+    let datos: Receta = {
+      id: this.RecetaSeleccionada.id,
+      titulo: this.Receta.value.titulo!,
+      descripcion: this.Receta.value.descripcion!,
+      imagen: this.Receta.value.imagen!,
+      alt: this.Receta.value.alt!,
+      ingredientes:this.Receta.value.ingredientes!,
+      duracion: this.Receta.value.duracion!,
+      porciones: this.Receta.value.porciones!
+    }
+
+    this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id,datos)
+    .then(Receta => {
+      alert("La Receta fue modificado con éxito :).");
+    })
+    .catch(error => {
+      alert("la receta no se pudo modificar :( \n"+error);
+    })
+
+
   }
 
-  // Editar la Receta seleccionada
-  editarReceta() {
-    if (this.RecetaSeleccionada && this.RecetaSeleccionada.id) {
-      let datos: Receta = {
-        id: this.RecetaSeleccionada.id,
-        titulo: this.Receta.value.titulo!,
-        descripcion: this.Receta.value.descripcion!,
-        imagen: this.Receta.value.imagen!,
-        alt: this.Receta.value.alt!,
-        categoria: this.Receta.value.categoria!,
-        duracion: this.Receta.value.duracion!,
-        porciones: this.Receta.value.porciones!
-      };
+editarReceta(){
 
-      this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id, datos)
-        .then(() => {
-          alert("La Receta fue modificada con éxito :).");
-        })
-        .catch(error => {
-          alert("La receta no se pudo modificar :( \n" + error);
-        });
-    } else {
-      console.error("RecetaSeleccionada es undefined o no tiene una propiedad 'id'.");
-    }
+  let datos: Receta = {
+    id: this.RecetaSeleccionada.id,
+    titulo: this.Receta.value.titulo!,
+    descripcion: this.Receta.value.descripcion!,
+    imagen: this.Receta.value.imagen!,
+    alt: this.Receta.value.alt!,
+    ingredientes:this.Receta.value.ingredientes!,
+    duracion: this.Receta.value.duracion!,
+    porciones: this.Receta.value.porciones!
   }
 
-  // Eliminar la Receta seleccionada
-  borrarReceta(RecetaSeleccionada: Receta) {
-    this.RecetaSeleccionada = RecetaSeleccionada;
+  this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id,datos)
+  .then(Receta => {
+    alert("La Receta fue modificado con éxito :).");
+  })
+  .catch(error => {
+    alert("la receta no se pudo modificar :( \n"+error);
+  })
+}
 
-    if (confirm("¿Está seguro?") === true) {
-      this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
-        .then(respuesta => {
-          alert("La Receta se ha eliminado correctamente :)");
-        })
-        .catch(error => {
-          alert("No se ha podido eliminar la Receta :( \n" + error);
-        })
-    }
+
+
+borrarReceta(RecetaSeleccionada: Receta){
+  this.RecetaSeleccionada = RecetaSeleccionada; // asigna Receta elegido
+
+  if(confirm("¿Está seguro?") === true){
+    this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
+  .then(respuesta => {
+    alert("La Receta se ha eliminado correctamente :)");
+  })
+  .catch(error => {
+    alert("No se ha podido eliminar la Receta :( \n"+error);
+  })
   }
 }
+}
+
+

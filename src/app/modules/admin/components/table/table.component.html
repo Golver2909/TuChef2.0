@@ -1,88 +1,89 @@
+
 <!DOCTYPE html>
 <html>
-
 <head>
 
 </head>
-
 <body>
 
-  <h2 class="center">Tabla De Recetas</h2><br>
+<h2 class="center">Tabla De Recetas</h2><br>
 
 
-  <table id="t01">
-    <tr>
-      <th>Nombre de la Receta </th>
-      <th>descripcion</th>
-      <th>imagen</th>
-      <th>duracion</th>
-      <th>porciones</th>
+<table  id="t01">
+  <tr>
+    <th>Nombre de la Receta </th>
+    <th>Descripcion</th>
+    <th>Imagen</th>
+    <th>Ingredientes</th>
+    <th>Duracion</th>
+    <th>Porciones</th>
 
 
-    </tr>
-    <tr *ngFor="let i of coleccionRecetas">
-      <td>{{i.titulo}}</td>
-      <td>{{i.descripcion}}</td>
-      <td><img src="{{i.imagen}}" alt="{{i.alt}}"></td>
-      <td>{{i.duracion}}</td>
-      <td>{{i.porciones}}</td>
-      <td>
+  </tr>
+  <tr *ngFor="let i of coleccionRecetas">
+    <!--primera fila -->
+    <td>{{i.titulo}}</td>
+    <td>{{i.descripcion}}</td>
+    <td><img src="{{i.imagen}}" alt="{{i.alt}}"></td>
+    <td>{{i.ingredientes}}</td>
+    <td>{{i.imagen}}</td>
+    <td>{{i.duracion}}</td>
+    <td>{{i.porciones}}</td>
+    <td>
         <button class="button" (click)="borrarReceta(i)">borrarReceta</button>
+       
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarProducto" (click)="mostrarEditar(i)">Editar Producto</button>
 
-        <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#editarProducto"   (click)="mostrarEditar(i)">Editar
-          Producto</button>
-
-
-
-        <div class="modal fade" *ngFor="let col of coleccionRecetas" id="editarProducto" tabindex="-1"
-          aria-labelledby="exampleModalLabel" aria-hidden="true">
+       
+      
+        <div class="modal fade" *ngFor="let col of coleccionRecetas" id="editarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Edite la Receta</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edite la siguiente receta</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div [formGroup]="Receta" class="modal-body">
                 <div class="mb-3">
-                  <label class="form-label">Ingrese nombre dela Receta</label>
+                  <label class="form-label">Ingrese nombre de la receta:</label>
                   <input class="form-control" type="text" formControlName="titulo" placeholder="{{col.titulo}}">
                 </div>
+     
                 <div class="mb-3">
-                  <label class="form-label">Descripcion de la Receta</label>
-                  <input class="form-control" type="text" formControlName="descripcion"
-                    placeholder="{{col.descripcion}}">
+                  <label class="form-label">Ingrese una descripción:</label>
+                  <input class="form-control" type="text" formControlName="descripcion" placeholder="{{col.descripcion}}">
                 </div>
 
                 <div class="mb-3">
-                  <label class="form-label">Url de la imagen</label>
+                  <label class="form-label">Ingrese una imagen:</label>
                   <input class="form-control" type="text" formControlName="imagen" placeholder="{{col.imagen}}">
                 </div>
 
                 <div class="mb-3">
-                  <label class="form-label">Texto alternativo si la imagen no carga</label>
+                  <label class="form-label">Ingrese texto alternativo de la imagen</label>
                   <input class="form-control" type="text" formControlName="alt" placeholder="{{col.alt}}">
                 </div>
 
+                
+
                 <div class="mb-3">
-                  <label class="form-label">Integrese la Categoria</label>
-                  <input class="form-control" type="number" formControlName="categoria" placeholder="{{col.categoria}}">
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Integre el tiempo de la duracion </label>
-                  <input class="form-control" type="number" formControlName="duracion" placeholder="{{col.duracion}}">
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Ingrese cantidad de porciones</label>
-                  <input class="form-control" type="number" formControlName="porciones" placeholder="{{col.porciones}}">
+                  <label class="form-label">Coloque el tiempo de preparacion </label>
+                  <input class="form-control" type="text" formControlName="duracion" placeholder="{{col.duracion}}">
                 </div>
 
-
+                <div class="mb-3">
+                  <label class="form-label">Coloque el tiempo de preparacion </label>
+                  <input class="form-control" type="text" formControlName="porciones" placeholder="{{col.porciones}}">
+                </div>
+        
+               
+                
+               
               </div>
-
+        
               <!-- ACCIONES DEL MODAL -->
               <div class="modal-footer">
-                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal"
-                  (click)="editarReceta()">Guardar cambios</button>
+                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" (click)="editarReceta()">Guardar cambios</button>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
               </div>
             </div>
@@ -90,12 +91,21 @@
         </div>
 
 
-      </td>
-    </tr>
+    </td>
+  </tr>
 
-  </table>
+</table>
 
-  <button type="submit" routerLink="/cards">Enviar Receta</button>
+
 </body>
-
 </html>
+   <!--export interface Receta {
+    
+    titulo: 
+    descripcion
+    imagen
+    alt
+    
+    duracion
+    porciones
+}-->

@@ -4,7 +4,7 @@ export interface Receta {
     descripcion: string;
     imagen: string;
     alt: string;
-    categoria: string;
+    ingredientes:string
     duracion: string;
     porciones: string;
 }
