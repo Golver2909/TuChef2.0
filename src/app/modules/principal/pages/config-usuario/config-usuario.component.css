@@ -1,12 +1,14 @@
 button{
   padding: 5px;
   margin: 30px;
+  justify-content: center;
 }
 
 input{
   padding: 5px;
   margin: 30px;
   width: 50%;
+  justify-content: center;
 }
 
 label{
@@ -16,3 +18,12 @@ label{
 .texto1{
   padding-left: 50px;
 }
+
+.texto2{
+  text-align: center;
+}
+
+.material-icons{
+  justify-content: center;
+}
+
