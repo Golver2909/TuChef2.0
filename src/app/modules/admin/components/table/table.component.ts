@@ -77,11 +77,11 @@ editarReceta(){
     duracion: this.Receta.value.duracion!,
     porciones: this.Receta.value.porciones!
   }
-
+// Llama al servicio para modificar la receta existente con los nuevos datos
   this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id,datos)
   .then(Receta => {
     alert("La Receta fue modificado con éxito :).");
-  })
+  })//carpura un error si sucede 
   .catch(error => {
     alert("la receta no se pudo modificar :( \n"+error);
   })
