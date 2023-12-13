@@ -17,6 +17,10 @@ import { PagesModule } from './modules/pages/pages.module';
 import {MatCardModule} from '@angular/material/card';
 import { AuthModule } from './modules/auth/auth.module';
 import { AdminModule } from './modules/admin/admin.module';
+import { DatosRecetaComponent } from './modules/pages/datos-receta/datos-receta.component';
+
+
+
 
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -39,14 +43,14 @@ import { AdminModule } from './modules/admin/admin.module';
     AngularFireStorageModule,
     SharedModule,
     PrincipalModule,
-    
+
     BrowserAnimationsModule,
     MatCardModule,
     PagesModule,
     AuthModule,
     AdminModule
 
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

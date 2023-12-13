@@ -14,11 +14,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import { DatosRecetaComponent } from './datos-receta/datos-receta.component';
 
 @NgModule({
   declarations: [
     MostrarRecetaComponent,
-  
+    DatosRecetaComponent,
+
   ],
   imports: [
     CommonModule,
@@ -39,7 +41,7 @@ import {MatTableModule} from '@angular/material/table';
     ReactiveFormsModule,
   ],
   exports:[
-    
+
     MatCardModule,
     MatIconModule,
     MatTableModule,
@@ -52,8 +54,9 @@ import {MatTableModule} from '@angular/material/table';
     MatChipsModule,
     MatListModule,
     MatTableModule,
-    MostrarRecetaComponent
+    MostrarRecetaComponent,
+    DatosRecetaComponent
   ]
-  
+
 })
 export class PagesModule { }
