@@ -18,15 +18,15 @@ constructor(private database: AngularFirestore) {
 
 }
 crearReceta(Receta:Receta){
-  return new Promise (async(resolve, reject)=>{
+  return new Promise (async(resolve, reject)=>{//se utiliza una promesa para manenjar la operacion de manera asincronica 
     try{
       const id= this.database.createId();//Id automatico
       Receta.id=id
 
-      const resultado =await this.productosReceta.doc(id).set(Receta)
-      resolve(resultado);
+      const resultado =await this.productosReceta.doc(id).set(Receta)// agrega una receta en la colecion Receta 
+      resolve(resultado);// si la operassion tiene exito se resuelve con el resultado 
 
-    }catch(error){
+    }catch(error){//si hay un erro rechaza la promesa 
       reject(error)
       alert("se detecto un error al crear un receta \n"+error)
     }
