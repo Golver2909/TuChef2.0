@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent {
-
+hide=true
 
 //Se define una propiedad llamada usuarios de tipo Usuario para almacenar la información del usuario
   usuarios: Usuario = {

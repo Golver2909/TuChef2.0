@@ -9,25 +9,25 @@
 <h2 class="text-center" >Tabla De Recetas</h2><br>
 
 
-<table  id="t01">
+<table  id="t01" >
   <tr>
-    <th>Nombre de la Receta </th>
-    <th>Descripcion</th>
-    <th>Imagen</th>
-    <th>Ingredientes</th>
-    <th>Duracion</th>
-    <th>Porciones</th>
+    <th class="text-center" >Nombre de la Receta </th>
+    <th class="text-center" >Descripcion         </th>
+    <th class="text-center" >Imagen              </th>
+    <th class="text-center" >Ingredientes        </th>
+    <th class="text-center" >Duracion            </th>
+    <th class="text-center" >Porciones           </th>
 
 
   </tr>
   <tr *ngFor="let i of coleccionRecetas">
     <!--primera fila -->
-    <td>{{i.titulo}}</td>
-    <td>{{i.descripcion}}</td>
-    <td><img src="{{i.imagen}}" alt="imagen"></td>
-    <td>{{i.ingredientes}}</td>
-    <td>{{i.duracion}}</td>
-    <td>{{i.porciones}}</td>
+    <td  class="text-center">{{i.titulo}}</td>
+    <td class="text-center">{{i.descripcion}}</td>
+    <td class="text-center"><img src="{{i.imagen}}" alt="imagen"></td>
+    <td class="text-center">{{i.ingredientes}}</td>
+    <td class="text-center">{{i.duracion}}</td>
+    <td class="text-center">{{i.porciones}}</td>
     <td>
         <button class="button" class="btn btn-danger" (click)="borrarReceta(i)">borrarReceta</button>
 
