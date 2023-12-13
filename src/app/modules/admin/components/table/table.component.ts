@@ -46,10 +46,10 @@ export class TableComponent {
 
 
 
-  mostrarEditar(RecetaSeleccionada: Receta){
+  mostrarEditar(RecetaSeleccionada: Receta){// espera los valores de la interfaz receta
     this.RecetaSeleccionada = RecetaSeleccionada;
 
-    this.Receta.setValue({//(coloca los valores en los inputs)
+    this.Receta.setValue({//coloca los valores en los inputs
       titulo: RecetaSeleccionada.titulo,
       descripcion: RecetaSeleccionada.descripcion,
       imagen: RecetaSeleccionada.imagen,
@@ -66,7 +66,8 @@ export class TableComponent {
 
 editarReceta(){
 
-  let datos: Receta = {
+  let datos: Receta = { //declara una variable  datos de tipo interfaz Receta 
+    //se obtiene el valor del control (ejem: titulo) en el formulario Receta 
     id: this.RecetaSeleccionada.id,
     titulo: this.Receta.value.titulo!,
     descripcion: this.Receta.value.descripcion!,
