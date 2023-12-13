@@ -48,7 +48,7 @@ crearReceta(Receta:Receta){
  }
  
 
-
+// esta función toma el ID de una receta y elimina ese documento de la colección 'Receta' en la base de datos Firestore
 eliminarReceta(id:string){
   return new Promise((resolve, reject) =>{
     try{
