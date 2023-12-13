@@ -39,8 +39,10 @@ crearReceta(Receta:Receta){
   pipe(map(action =>action.map(a=>a.payload.doc.data())))
  }//pipe transforma el flujo de eventos, map "escanea"el documento, a=>a.payload.doc.data devuele los datos del documento 
 
+      
 
- modificarrReceta(id:string,   nuevaData:Receta){
+ //Esta funcion toma el id y los nuevos datos de receta y actualiza esos datos en la base de datos (firebase)
+ modificarrReceta(id:string,  nuevaData:Receta){
   return this.database.collection('Receta').doc(id).update(nuevaData)
 
  }
