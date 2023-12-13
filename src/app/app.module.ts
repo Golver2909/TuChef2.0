@@ -34,9 +34,9 @@ import { AdminModule } from './modules/admin/admin.module';
     BrowserAnimationsModule,
     SharedModule,
     // Configuración de módulos FIREBASE
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),//configuracion de firebase
+    AngularFireAuthModule,//auth de usuarios
+    AngularFireStorageModule,//almacena datos en firebase 
     SharedModule,
     PrincipalModule,
     

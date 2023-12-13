@@ -1,23 +1,15 @@
-<form
-  class="container text-center"
-  id="Receta"
-  [formGroup]="Receta"
-
->
+<form class="container text-center" id="Receta" [formGroup]="Receta">
   <div class="row">
     <div class="col">
       <div class="rectangulo">
-        <mat-label
-          ><h1><p align="center">Nombre Receta:</p></h1></mat-label
-        >
+        <mat-label>
+          <h1>
+            <p align="center">Nombre Receta:</p>
+          </h1>
+        </mat-label>
         <mat-form-field class="example-form-field">
-          <input
-            matInput
-            type="textarea"
-            placeholder="Ingrese nombre de la receta"
-            id="titulo"
-            formControlName="titulo"
-          />
+          <input matInput type="textarea" placeholder="Ingrese nombre de la receta" id="titulo"
+            formControlName="titulo" />
         </mat-form-field>
       </div>
       <br />
@@ -28,7 +20,9 @@
             <div class="col">
               <div class="cuadrado">
                 <mat-label class="texto">
-                  <h1><p align="center">Porciones</p></h1>
+                  <h1>
+                    <p align="center">Porciones</p>
+                  </h1>
                 </mat-label>
                 <mat-form-field class="example-full-width">
                   <input matInput type="number" formControlName="porciones" />
@@ -37,69 +31,56 @@
               <br />
               <div class="cuadrado">
                 <label class="texto">
-                  <h1><p align="center">Tiempo de preparacion:</p></h1>
+                  <h1>
+                    <p align="center">Tiempo de preparacion:</p>
+                  </h1>
                 </label>
                 <mat-form-field class="example-full-width">
                   <span matPrefix>
                     <mat-icon class="tiempo">schedule</mat-icon>
                   </span>
-                  <input
-                    class="inp-tie"
-                    type="time"
-                    matInput
-                    formControlName="duracion"
-                  />
+                  <input class="inp-tie" type="time" matInput formControlName="duracion" />
                 </mat-form-field>
               </div>
               <br />
-              <div class="cua-foto">
-                <button class="boton-foto" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+              <div class="cua-foto"  >
+                <!--boton para abrir el modal -->
+                <button class="boton-foto" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  data-bs-whatever="@mdo">
                   <mat-icon class="foto">add_a_photo</mat-icon>
                 </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                <!--modal de Url de Receta-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true" >
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">
                           Ingrece la url de la imagen
                         </h1>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <form>
+                        
                           <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label"
-                              >Url:</label
-                            >
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="recipient-name"
-                              formControlName="imagen"/>
+                            <label for="recipient-name" class="col-form-label">Url de la receta</label>
+                            <input type="text" class="form-control" formControlName="imagen" />
                           </div>
-                        </form>
+                        
                       </div>
                       <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-danger"
-                          data-bs-dismiss="modal"
-                        >
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
                           Salir
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
                           Enviar
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </div> 
                 </div>
-              </div>
+              </div  ><!--termina la clase de cua-foto-->
             </div>
           </div>
         </div>
@@ -117,12 +98,14 @@
         <textarea class="texa" formControlName="descripcion"></textarea>
       </p>
       <div>
-        <br>
-        <button type="submit" class="button" routerLink="/table" (click)="agregarReceta()"> Enviar Receta</button>
+        <br />
+        <button type="submit" class="button" routerLink="/table" (click)="agregarReceta()">
+          Enviar Receta
+        </button>
       </div>
     </div>
   </div>
   <div>
-    <br>
+    <br />
   </div>
 </form>

@@ -16,8 +16,8 @@ export class TableComponent {
 
   RecetaSeleccionada!:Receta;
 
-  Receta = new FormGroup({
-
+  Receta = new FormGroup({  //formGruop para capturar los datos desde el html
+    //con un formControlName capturo los siguientes datos
     titulo: new FormControl('',Validators.required),
     descripcion:new FormControl('',Validators.required),
     imagen:new FormControl('',Validators.required),
@@ -31,7 +31,7 @@ export class TableComponent {
 
   })
 
-  constructor(
+  constructor(//
     public servicioCrud: CrudService,
     public router: Router
     ){}
@@ -59,25 +59,7 @@ export class TableComponent {
       porciones: RecetaSeleccionada.porciones
 
     })
-    this.router.navigate(["/mostrar"]);
-    let datos: Receta = {
-      id: this.RecetaSeleccionada.id,
-      titulo: this.Receta.value.titulo!,
-      descripcion: this.Receta.value.descripcion!,
-      imagen: this.Receta.value.imagen!,
-      alt: this.Receta.value.alt!,
-      ingredientes:this.Receta.value.ingredientes!,
-      duracion: this.Receta.value.duracion!,
-      porciones: this.Receta.value.porciones!
-    }
-
-    this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id,datos)
-    .then(Receta => {
-      alert("La Receta fue modificado con éxito :).");
-    })
-    .catch(error => {
-      alert("la receta no se pudo modificar :( \n"+error);
-    })
+  
 
 
   }

@@ -1,56 +1,60 @@
 .espa{
-    padding: 2%;
-}
-/*:::::Pie de Pagina*/
-.pie-pagina{
+    padding: 1%;
+    }
+    /*:::::Pie de Pagina*/
+    .pie-pagina{
     width: 100%;
     background-color: #04525f;
-}
-.pie-pagina .grupo-1{
+    position: relative;
+    
+    margin-top: 34.4%;
+    }
+    .pie-pagina .grupo-1{
     width: 100%;
     margin: auto;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap:50px;
     padding: 45px 0px;
-}
-.pie-pagina .grupo-1 .box figure{
+    }
+    .pie-pagina .grupo-1 .box figure{
     width: 75%;
     height: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.pie-pagina .grupo-1 .box figure img{
+    }
+    .pie-pagina .grupo-1 .box figure img{
     width: 250px;
-}
-.pie-pagina .grupo-1 .box h2{
+    }
+    .pie-pagina .grupo-1 .box h2{
     color: #fff;
     margin-bottom: 25px;
     font-size: 20px;
-}
-.pie-pagina .grupo-1 .box p{
+    }
+    .pie-pagina .grupo-1 .box p{
     color: #efefef;
     margin-bottom: 10px;
-}
-
-.pie-pagina .grupo-1 .red-social a:hover{
+    }
+    
+    .pie-pagina .grupo-1 .red-social a:hover{
     color: aqua;
-}
-.pie-pagina .grupo-2{
+    padding: 3%;
+    }
+    .pie-pagina .grupo-2{
     background-color: #0a1a2a;
     padding: 15px 10px;
     text-align: center;
     color: #fff;
-}
-.pie-pagina .grupo-2 small{
-    font-size: 15px;
-}
-@media screen and (max-width:800px){
-    .pie-pagina .grupo-1{
-        width: 90%;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap:30px;
-        padding: 35px 0px;
     }
-}
+    .pie-pagina .grupo-2 small{
+    font-size: 15px;
+    }
+    @media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap:30px;
+    padding: 35px 0px;
+    }
+    }
