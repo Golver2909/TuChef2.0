@@ -35,9 +35,9 @@ crearReceta(Receta:Receta){
 
 
  obtenerRecetas(){
-  return this.productosReceta.snapshotChanges().
+  return this.productosReceta.snapshotChanges().//Este método devuelve un observable que emite una serie de cambios realizados en la colección 'Receta'
   pipe(map(action =>action.map(a=>a.payload.doc.data())))
- }//estudiar
+ }//pipe transforma el flujo de eventos, map "escanea"el documento, a=>a.payload.doc.data devuele los datos del documento 
 
 
  modificarrReceta(id:string,   nuevaData:Receta){
