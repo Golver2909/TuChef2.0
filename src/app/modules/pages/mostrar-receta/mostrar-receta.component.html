@@ -31,7 +31,7 @@
                   <h1><p align="center">Porciones</p></h1>
                 </mat-label>
                 <mat-form-field class="example-full-width">
-                  <input matInput type="number" formControlName="porciones" />
+                  <input matInput type="number" formControlName="porciones" placeholder="Eje  4" />
                 </mat-form-field>
               </div>
               <br />
@@ -106,7 +106,7 @@
         <div class="col cuadrado3">
           <h1>Ingredientes</h1>
           <p>
-            <textarea class="texa" formControlName="ingredientes"></textarea>
+            <textarea class="texa" formControlName="ingredientes" placeholder="Eje: 1kg de pollo, 150g de harina ...."></textarea>
           </p>
         </div>
       </div>
@@ -114,11 +114,11 @@
     <div class="col cuadrado2">
       <h1>Procedimiento</h1>
       <p class="">
-        <textarea class="texa" formControlName="descripcion"></textarea>
+        <textarea class="texa" formControlName="descripcion" placeholder="1-precalentar el horno a 180º"></textarea>
       </p>
       <div>
         <br>
-        <button type="submit" class="button" routerLink="/table" (click)="agregarReceta()"> Enviar Receta</button>
+        <button type="submit" class="button" routerLink="/table" (click)="agregarReceta()" > Enviar Receta</button>
       </div>
     </div>
   </div>
