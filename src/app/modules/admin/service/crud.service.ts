@@ -11,7 +11,9 @@ private productosReceta:AngularFirestoreCollection<Receta>//colecciona todas las
 
 
 constructor(private database: AngularFirestore) {
+   // Inicializa la colección 'Receta' en AngularFirestore
   this.productosReceta = database.collection('Receta')
+  //agregado: esto permite establecer una conexion a la coleccion Receta en firebase 
 
 
 }
