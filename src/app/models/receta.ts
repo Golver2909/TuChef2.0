@@ -1,4 +1,4 @@
-export interface Receta {
+export interface Receta {// aca se exporta la interfaz para hacer uso de ella 
     id: string;
     titulo: string;
     descripcion: string;

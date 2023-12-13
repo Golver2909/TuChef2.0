@@ -31,16 +31,16 @@ export class TableComponent {
 
   })
 
-  constructor(//
+  constructor(// inyecto de manera publica el crud service y el router 
     public servicioCrud: CrudService,
     public router: Router
     ){}
 
 
-  ngOnInit(): void{
-    this.servicioCrud.obtenerRecetas().subscribe(Receta => {
+  ngOnInit(): void{//obtiene la recetas apena inicializa,
+    this.servicioCrud.obtenerRecetas().subscribe(Receta => {//subscribe si hay cambios actualiza la propiedad coleccionRecetas 
       this.coleccionRecetas = Receta;
-    })///estudiar
+    })//resumen: carga las recetas al componente cuando este inicializa 
   }
 
 
