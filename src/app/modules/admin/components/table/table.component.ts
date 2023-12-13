@@ -90,9 +90,10 @@ editarReceta(){
 
 
 borrarReceta(RecetaSeleccionada: Receta){
-  this.RecetaSeleccionada = RecetaSeleccionada; // asigna Receta elegido
+  // Asigna los datos de la receta seleccionada a la variable RecetaSeleccionada
+  this.RecetaSeleccionada = RecetaSeleccionada; 
 
-  if(confirm("¿Está seguro?") === true){
+  if(confirm("¿Está seguro?") === true){// si apreta aceptar procede a llamar al servicio.eliminarR asigando el id para eliminar la receta 
     this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
   .then(respuesta => {
     alert("La Receta se ha eliminado correctamente :)");
