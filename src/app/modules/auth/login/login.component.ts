@@ -8,23 +8,25 @@ import { AuthService } from '../services/auth.service'; // Importación del serv
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-login', // Selector del componente
-  templateUrl: './login.component.html', // Plantilla HTML asociada al componente
-  styleUrls: ['./login.component.css'], // Estilos CSS asociados al componente
-  providers: [AuthService] // Proveedor del servicio AuthService
+  selector: 'app-login', 
+  templateUrl: './login.component.html', 
+  styleUrls: ['./login.component.css'], 
+  providers: [AuthService] 
 })
 
 export class LoginComponent {
-  hide = true;
+hide=true
 
-
+//Se define una propiedad llamada usuarios de tipo Usuario para almacenar la información del usuario
   usuarios: Usuario = {
     uid: '',
     nombre: '',
     rol: 'usuario',
     email: '',
     contrasena: ''
-  }
+  }   
+
+  //Se inyectan los servicios AuthService, FirestoreService y el router Router en el constructor del componente.
   constructor(
     public servicioAuth: AuthService,
     public servicioFirestore: FirestoreService,
@@ -59,7 +61,7 @@ export class LoginComponent {
         console.log(credenciales.email);
       })
     }
-
+    //Se define un método salir que utiliza el servicio de autenticación (AuthService) para cerrar sesión
     async salir(){
       const res = await this.servicioAuth.cerrarSesion()
       .then(res => {
@@ -71,7 +73,7 @@ export class LoginComponent {
     }
    
  
-
+//servicio de autenticación para obtener información del usuario apenas inicie la pagina 
     ngOnInit(): void{
       this.servicioAuth.obtenerUsuario().subscribe(usuario => {
         this.coleccionUsuarios = usuario;

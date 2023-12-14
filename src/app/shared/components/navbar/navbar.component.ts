@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { CrudUserService } from '../../services/crud-user.service';
 import { CrudService } from 'src/app/modules/admin/service/crud.service';
@@ -10,7 +10,7 @@ import { Receta } from 'src/app/models/receta';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   colectionUser: Usuario[] = [];
   userSelect!: Usuario //Recibe valores vacios
   coleccionRecetas: Receta[] = []; // Colección de todas las recetas

@@ -10,85 +10,99 @@ import { Router } from '@angular/router';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-  coleccionRecetas: Receta[] = []; // Colección de todas las recetas
-  RecetaSeleccionada!: Receta;
+  coleccionRecetas:Receta []=[]//colecciona todas las recetas
 
-  // Formulario para la Receta
-  Receta = new FormGroup({
-    titulo: new FormControl('', Validators.required),
-    descripcion: new FormControl('', Validators.required),
-    imagen: new FormControl('', Validators.required),
-    alt: new FormControl('', Validators.required),
-    categoria: new FormControl('', Validators.required),
-    duracion: new FormControl('', Validators.required),
-    porciones: new FormControl('', Validators.required),
+
+
+  RecetaSeleccionada!:Receta;
+
+  Receta = new FormGroup({  //formGruop para capturar los datos desde el html
+    //con un formControlName capturo los siguientes datos
+    titulo: new FormControl('',Validators.required),
+    descripcion:new FormControl('',Validators.required),
+    imagen:new FormControl('',Validators.required),
+    alt: new FormControl('',Validators.required),
+    ingredientes: new FormControl('', Validators.required),
+    duracion: new FormControl('',Validators.required),
+    porciones: new FormControl('',Validators.required),
+
+
+
+
   })
 
-  constructor(
+  constructor(// inyecto de manera publica el crud service y el router 
     public servicioCrud: CrudService,
     public router: Router
-  ) {}
+    ){}
 
-  ngOnInit(): void {
-    // Obtener recetas al inicializar el componente
-    this.servicioCrud.obtenerRecetas().subscribe(Receta => {
+
+  ngOnInit(): void{//obtiene la recetas apena inicializa,
+    this.servicioCrud.obtenerRecetas().subscribe(Receta => {//subscribe si hay cambios actualiza la propiedad coleccionRecetas 
       this.coleccionRecetas = Receta;
-    })
+    })//resumen: carga las recetas al componente cuando este inicializa 
   }
 
-  // Mostrar modal de edición con datos de la Receta seleccionada
-  mostrarEditar(RecetaSeleccionada: Receta) {
+
+
+
+  mostrarEditar(RecetaSeleccionada: Receta){// espera los valores de la interfaz receta
     this.RecetaSeleccionada = RecetaSeleccionada;
 
-    this.Receta.setValue({
+    this.Receta.setValue({//coloca los valores en los inputs
       titulo: RecetaSeleccionada.titulo,
       descripcion: RecetaSeleccionada.descripcion,
       imagen: RecetaSeleccionada.imagen,
       alt: RecetaSeleccionada.alt,
-      categoria: RecetaSeleccionada.categoria,
+      ingredientes: RecetaSeleccionada.ingredientes,
       duracion: RecetaSeleccionada.duracion,
       porciones: RecetaSeleccionada.porciones
-    });
+
+    })
+  
+
+
   }
 
-  // Editar la Receta seleccionada
-  editarReceta() {
-    if (this.RecetaSeleccionada && this.RecetaSeleccionada.id) {
-      let datos: Receta = {
-        id: this.RecetaSeleccionada.id,
-        titulo: this.Receta.value.titulo!,
-        descripcion: this.Receta.value.descripcion!,
-        imagen: this.Receta.value.imagen!,
-        alt: this.Receta.value.alt!,
-        categoria: this.Receta.value.categoria!,
-        duracion: this.Receta.value.duracion!,
-        porciones: this.Receta.value.porciones!
-      };
+editarReceta(){
 
-      this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id, datos)
-        .then(() => {
-          alert("La Receta fue modificada con éxito :).");
-        })
-        .catch(error => {
-          alert("La receta no se pudo modificar :( \n" + error);
-        });
-    } else {
-      console.error("RecetaSeleccionada es undefined o no tiene una propiedad 'id'.");
-    }
+  let datos: Receta = { //declara una variable  datos de tipo interfaz Receta 
+    //se obtiene el valor del control (ejem: titulo) en el formulario Receta 
+    id: this.RecetaSeleccionada.id,
+    titulo: this.Receta.value.titulo!,
+    descripcion: this.Receta.value.descripcion!,
+    imagen: this.Receta.value.imagen!,
+    alt: this.Receta.value.alt!,
+    ingredientes:this.Receta.value.ingredientes!,
+    duracion: this.Receta.value.duracion!,
+    porciones: this.Receta.value.porciones!
   }
+// Llama al servicio para modificar la receta existente con los nuevos datos
+  this.servicioCrud.modificarrReceta(this.RecetaSeleccionada.id,datos)
+  .then(Receta => {
+    alert("La Receta fue modificado con éxito :).");
+  })//carpura un error si sucede 
+  .catch(error => {
+    alert("la receta no se pudo modificar :( \n"+error);
+  })
+}
 
-  // Eliminar la Receta seleccionada
-  borrarReceta(RecetaSeleccionada: Receta) {
-    this.RecetaSeleccionada = RecetaSeleccionada;
 
-    if (confirm("¿Está seguro?") === true) {
-      this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
-        .then(respuesta => {
-          alert("La Receta se ha eliminado correctamente :)");
-        })
-        .catch(error => {
-          alert("No se ha podido eliminar la Receta :( \n" + error);
-        })
-    }
+
+borrarReceta(RecetaSeleccionada: Receta){
+  // Asigna los datos de la receta seleccionada a la variable RecetaSeleccionada
+  this.RecetaSeleccionada = RecetaSeleccionada; 
+
+  if(confirm("¿Está seguro?") === true){// si apreta aceptar procede a llamar al servicio.eliminarR asigando el id para eliminar la receta 
+    this.servicioCrud.eliminarReceta(this.RecetaSeleccionada.id)
+  .then(respuesta => {
+    alert("La Receta se ha eliminado correctamente :)");
+  })
+  .catch(error => {
+    alert("No se ha podido eliminar la Receta :( \n"+error);
+  })
   }
 }
+}
+
+

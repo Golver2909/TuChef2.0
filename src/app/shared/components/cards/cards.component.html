@@ -4,7 +4,7 @@
         <div class="col-lg-4" *ngFor="let i of coleccionRecetas">
             <div class="card">
                 <div class="face front">
-                    <img class="imagen" alt="" mat-card-image src="{{i.imagen}}">
+                    <img  alt="" mat-card-image src="{{i.imagen}}">
                     <h3 class="borde">{{i.titulo}}</h3>
                 </div>
 
@@ -13,14 +13,12 @@
                     <div>
                         <p><mat-icon>schedule</mat-icon> {{i.duracion}} </p>
                     </div>
-                    <div>
-                        <p><mat-icon>label</mat-icon> {{i.categoria}}</p>
-                    </div>
+                   
                     <div>
                         <p><mat-icon>group</mat-icon> {{i.porciones}}</p>
                     </div>
                     <div class="action">
-                        <a href="#" class="btn" routerLink="/mostrarRecetas">
+                        <a href="#" class="btn" routerLink="/table">
                             <font color="white">recetas</font>
                         </a>
                     </div>

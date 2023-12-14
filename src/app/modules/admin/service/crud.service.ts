@@ -2,56 +2,67 @@ import { Injectable } from '@angular/core';
 import { Receta } from 'src/app/models/receta';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs/operators';
-
+import { async } from '@angular/core/testing';
 @Injectable({
   providedIn: 'root'
 })
 export class CrudService {
-  private productosReceta: AngularFirestoreCollection<Receta>; // Colección que almacena todas las recetas
+private productosReceta:AngularFirestoreCollection<Receta>//colecciona todas las recetas
 
-  constructor(private database: AngularFirestore) {
-    this.productosReceta = database.collection('Receta');
-  }
 
-  // Crear una nueva receta
-  crearReceta(Receta: Receta) {
-    return new Promise(async (resolve, reject) => {
-      try {
-        const id = this.database.createId(); // Generar un ID automático
-        Receta.id = id;
+constructor(private database: AngularFirestore) {
+   // Inicializa la colección 'Receta' en AngularFirestore
+  this.productosReceta = database.collection('Receta')
+  //agregado: esto permite establecer una conexion a la coleccion Receta en firebase 
 
-        const resultado = await this.productosReceta.doc(id).set(Receta);
-        resolve(resultado);
 
-      } catch (error) {
-        reject(error);
-        alert("Se detectó un error al crear una receta.\n" + error);
-      }
-    });
-  }
+}
+crearReceta(Receta:Receta){
+  return new Promise (async(resolve, reject)=>{//se utiliza una promesa para manenjar la operacion de manera asincronica 
+    try{
+      const id= this.database.createId();//Id automatico
+      Receta.id=id
 
-  // Obtener todas las recetas
-  obtenerRecetas() {
-    return this.productosReceta.snapshotChanges().pipe(
-      map(action => action.map(a => a.payload.doc.data()))
-    );
-  }
+      const resultado =await this.productosReceta.doc(id).set(Receta)// agrega una receta en la colecion Receta 
+      resolve(resultado);// si la operassion tiene exito se resuelve con el resultado 
 
-  // Modificar una receta existente por ID
-  modificarrReceta(id: string, nuevaData: Receta) {
-    return this.database.collection('Receta').doc(id).update(nuevaData);
-  }
+    }catch(error){//si hay un erro rechaza la promesa 
+      reject(error)
+      alert("se detecto un error al crear un receta \n"+error)
+    }
+  })
+}
 
-  // Eliminar una receta por ID
-  eliminarReceta(id: string) {
-    return new Promise((resolve, reject) => {
-      try {
-        const resp = this.productosReceta.doc(id).delete();
-        resolve(resp);
-      } catch (error) {
-        reject(error);
-        alert("Se produjo un error al eliminar el producto.\n" + error);
-      }
-    });
-  }
+
+ obtenerRecetas(){
+  return this.productosReceta.snapshotChanges().//Este método devuelve un observable que emite una serie de cambios realizados en la colección 'Receta'
+  pipe(map(action =>action.map(a=>a.payload.doc.data())))
+ }//pipe transforma el flujo de eventos, map "escanea"el documento, a=>a.payload.doc.data devuele los datos del documento 
+
+      
+
+ //Esta funcion toma el id y los nuevos datos de receta y actualiza esos datos en la base de datos (firebase)
+ modificarrReceta(id:string,  nuevaData:Receta){
+  return this.database.collection('Receta').doc(id).update(nuevaData)
+
+ }
+ 
+
+// esta función toma el ID de una receta y elimina ese documento de la colección 'Receta' en la base de datos Firestore
+eliminarReceta(id:string){
+  return new Promise((resolve, reject) =>{
+    try{
+      const resp = this.productosReceta.doc(id).delete()
+      resolve (resp)
+    }
+    catch(error){
+      reject (error)
+      alert("se produjo un error al eliminar el producto  \n"+error)
+    }
+  })
+}
+
+ 
+
+
 }

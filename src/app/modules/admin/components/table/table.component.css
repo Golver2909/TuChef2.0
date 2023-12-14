@@ -1,3 +1,9 @@
+
+img{
+  width: 25%;
+  height: 25%;
+}
+
 table {
     width:100%;
 }/******Este es el codigo que cambias!********/
@@ -6,14 +12,15 @@ table {
     border-radius: 5px;
    /***************/
 }
+
 th, td {
     padding: 15px;
     text-align: left;
 }
 table#t01 tr:nth-child(even) {
-  background: #42ed50;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,  #fbfb5e, #42ed50);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fbfb5e, #42ed50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background:#bced42;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffffff,#bced42);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #bdbdbd, #bced42); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 table#t01 tr:nth-child(odd) {
@@ -31,6 +38,24 @@ table#t01 th {
   text-align: center;
 }
 .button{
-  padding: 2px;
-  border-radius: 15px;
+  width: 15%;
+  padding: 1%;
+  margin: 2% 5%;
+  text-align: center;
+  border-radius: 25px;
+  color: black;
+  border: 1px solid #000;
+  font-size: 100%;
+  cursor: pointer;
+  font-weight: 600;
+  float: right;
+
+}
+.button:hover{
+   background: rgb(255, 153, 51);
+  transition: 0.5s;
+}
+
+button{
+  margin: 2%;
 }

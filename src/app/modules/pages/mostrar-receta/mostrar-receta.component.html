@@ -1,64 +1,112 @@
-<form class="container text-center" id="Receta" [formGroup]="Receta" (ngSubmit)="agregarReceta()">
+<form class="container text-center" id="Receta" [formGroup]="Receta">
   <div class="row">
     <div class="col">
       <div class="rectangulo">
-        <mat-label><p align="center">Nombre Receta:</p></mat-label>
+        <mat-label>
+          <h1>
+            <p align="center">Nombre Receta:</p>
+          </h1>
+        </mat-label>
         <mat-form-field class="example-form-field">
-          <input matInput type="textarea" placeholder="Ingrese nombre de la receta" id="titulo" formControlName="titulo">
+          <input matInput type="textarea" placeholder="Ingrese nombre de la receta" id="titulo"
+            formControlName="titulo" />
         </mat-form-field>
-
       </div>
-      <br/>
+      <br />
       <div class="row">
         <div class="col-5">
-          <br/>
+          <br />
           <div class="row">
             <div class="col">
               <div class="cuadrado">
                 <mat-label class="texto">
-                  <p align="center">Porciones</p>
+                  <h1>
+                    <p align="center">Porciones</p>
+                  </h1>
                 </mat-label>
                 <mat-form-field class="example-full-width">
-                  <input matInput type="number" formControlName="porciones">
+                  <input matInput type="number" formControlName="porciones" />
                 </mat-form-field>
               </div>
               <br />
               <div class="cuadrado">
                 <label class="texto">
-                  <p align="center">Tiempo de preparacion:</p>
+                  <h1>
+                    <p align="center">Tiempo de preparacion:</p>
+                  </h1>
                 </label>
                 <mat-form-field class="example-full-width">
                   <span matPrefix>
                     <mat-icon class="tiempo">schedule</mat-icon>
                   </span>
-                  <input class="inp-tie" type="time" matInput formControlName="duracion">
+                  <input class="inp-tie" type="time" matInput formControlName="duracion" />
                 </mat-form-field>
               </div>
-              <br>
-              <div class="cua-foto">
-                <form action="">agregre la Url de la imagen
-                  <input type="text"  formControlName="imagen">
-                </form>
+              <br />
+              <div class="cua-foto"  >
+                <!--boton para abrir el modal -->
+                <button class="boton-foto" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  data-bs-whatever="@mdo">
+                  <mat-icon class="foto">add_a_photo</mat-icon>
+                </button>
 
-              </div>
+                <!--modal de Url de Receta-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true" >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Ingrece la url de la imagen
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Url de la receta</label>
+                            <input type="text" class="form-control" formControlName="imagen" />
+                          </div>
+                        
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                          Salir
+                        </button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
+                          Enviar
+                        </button>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+              </div  ><!--termina la clase de cua-foto-->
             </div>
           </div>
         </div>
-        <div class="col">
-          <table class="cuadrado3">
-           <textarea cols="30" rows="20" formControlName="categoria"></textarea>
-          </table>
+        <div class="col cuadrado3">
+          <h1>Ingredientes</h1>
+          <p>
+            <textarea class="texa" formControlName="ingredientes"></textarea>
+          </p>
         </div>
       </div>
     </div>
     <div class="col cuadrado2">
-      <h2>Procedimiento</h2>
-      <p class="cuadrado2">
+      <h1>Procedimiento</h1>
+      <p class="">
         <textarea class="texa" formControlName="descripcion"></textarea>
       </p>
+      <div>
+        <br />
+       
+      </div>
     </div>
   </div>
   <div>
-    <button type="submit" routerLink="/table">Enviar Receta</button>
+    <br />
   </div>
+  <button type="submit" class="button" routerLink="/cards" (click)="agregarReceta()">
+    Enviar Receta
+  </button>
 </form>
