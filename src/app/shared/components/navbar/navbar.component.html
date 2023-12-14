@@ -3,12 +3,8 @@
     <a href="/#"><img src="../../../../assets/logo tipo 1 png.png" width="105" height="65" alt="Logo Tu,chef"></a>
   </div>
   <span class="example-spacer"></span>
-  <!-- Seccion busqueda -->
-    <input class="form-control" type="text" placeholder="Buscar receta...">
-    <button class="btn btn-outline-success" routerLink=""><img width="20" height="20"
-      src="../../../../assets/icons/search-outline.png" alt="">
-    </button>
   
+  <button class="btn btn-outline-light" routerLink="/recetas-principal">Ver recetas</button>
   <span class="example-spacer"></span>
   <div id="derecha" class="col-lg-3"><!-- Lado derecho -->
     <button mat-button [matMenuTriggerFor]="menu"><img width="20" height="20" src="../../../../assets/icons/user-solid.png" alt=""></button>
@@ -21,5 +17,5 @@
       <button mat-menu-item routerLink="">Salir</button><!-- Aqui ira un ngIf, para casos donde no este logueado -->
     </mat-menu>
   </div>
-  <button class="btn btn-outline-success" routerLink="/mostrar">Nueva Receta  <img src="../../../../assets/aplicaciones-anadir.png" alt="añadir receta" width="20" height="20"></button>
+  <button class="btn btn-outline-success" routerLink="/mostrar">Nueva Receta  <img src="../../../../assets/plus-square_.png" alt="añadir receta" width="30" height="30"></button>
 </mat-toolbar>
