@@ -20,7 +20,7 @@
 
 
   </tr>
-  <tr *ngFor="let i of coleccionRecetas">
+  <tr id="t01" *ngFor="let i of coleccionRecetas">
     <!--primera fila -->
     <td  class="text-center">{{i.titulo}}</td>
     <td class="text-center">{{i.descripcion}}</td>
@@ -95,16 +95,9 @@
 
 </table>
 
-
+<button type="submit" class="button" routerLink="/inicio" >
+ Volver al inicio 
+</button>
 </body>
 </html>
-   <!--export interface Receta {
-
-    titulo:
-    descripcion
-    imagen
-    alt
-
-    duracion
-    porciones
-}-->
+  
